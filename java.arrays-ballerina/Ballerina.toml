@@ -1,6 +1,14 @@
 [project]
 org-name = "ballerina"
-version = "0.9.1"
+version = "0.9.0"
 
 [platform]
 target = "java8"
+
+    [[platform.libraries]]
+    artifactId = "io"
+    version = "0.9.0-SNAPSHOT"
+    path = "../java.arrays-test-utils/build/libs/java.arrays-test-utils-0.9.0-SNAPSHOT.jar"
+    groupId = "org.ballerinalang.stdlib.java.arrays.testutils"
+    modules = ["java.arrays"]
+    scope = "testOnly"
