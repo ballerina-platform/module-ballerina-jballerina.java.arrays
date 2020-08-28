@@ -219,227 +219,360 @@ public function testToHandleWithJObject() {
     }
 }
 
-// Need a way to tests with Java handlers
-public function testFromHandleWithString(handle arrayHandle) returns boolean {
+@test:Config {}
+public function testFromHandleWithString() {
     string[] arrayIntended = ["Five", "Two", "Nine", "Three", "Seven"];
+    handle arrayHandle = getStringHandle();
     any[]|error value = fromHandle(arrayHandle, "string");
     if (value is error) {
-        return false;
+        test:assertFail(msg = value.message());
     }
     string[] array = <string[]>value;
-    if (arrayIntended == array) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-public function testFromHandleWithBoolean(handle arrayHandle) returns boolean {
-    boolean[] arrayIntended = [true, true, false, true];
-    any[]|error value = fromHandle(arrayHandle, "boolean");
-    if (value is error) {
-        return false;
-    }
-    boolean[] array = <boolean[]>value;
-    if (arrayIntended == array) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-public function testFromHandleWithFloat(handle arrayHandle) returns boolean {
-    float[] arrayIntended = [8.699999809265137, 25.200000762939453, 79.0999984741211, 34.599998474121094, 2.0];
-    any[]|error value = fromHandle(arrayHandle, "float");
-    if (value is error) {
-        return false;
-    }
-    float[] array = <float[]>value;
-    if (arrayIntended == array) {
-        return true;
-    } else {
-        return false;
-    }
+    test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-public function testFromHandleWithDouble(handle arrayHandle) returns boolean {
+public function testFromHandleWithPrimitiveBoolean() {
+    boolean[] arrayIntended = [true, true, false, true];
+    handle arrayHandle = getPrimitiveBooleanHandle();
+    any[]|error value = fromHandle(arrayHandle, "boolean");
+    if (value is error) {
+        test:assertFail(msg = value.message());
+    }
+    boolean[] array = <boolean[]>value;
+    test:assertEquals(array, arrayIntended);
+}
+
+@test:Config {}
+public function testFromHandleWithBoolean() {
+    boolean[] arrayIntended = [true, true, false, true];
+    handle arrayHandle = getBooleanHandle();
+    any[]|error value = fromHandle(arrayHandle, "boolean");
+    if (value is error) {
+        test:assertFail(msg = value.message());
+    }
+    boolean[] array = <boolean[]>value;
+    test:assertEquals(array, arrayIntended);
+}
+
+@test:Config {}
+public function testFromHandleWithPrimitiveFloat() {
+    float[] arrayIntended = [8.699999809265137, 25.200000762939453, 79.0999984741211, 34.599998474121094, 2.0];
+    handle arrayHandle = getPrimitiveFloatHandle();
+    any[]|error value = fromHandle(arrayHandle, "float");
+    if (value is error) {
+        test:assertFail(msg = value.message());
+    }
+    float[] array = <float[]>value;
+    test:assertEquals(array, arrayIntended);
+}
+
+@test:Config {}
+public function testFromHandleWithFloat() {
+    float[] arrayIntended = [8.699999809265137, 25.200000762939453, 79.0999984741211, 34.599998474121094, 2.0];
+    handle arrayHandle = getFloatHandle();
+    any[]|error value = fromHandle(arrayHandle, "float");
+    if (value is error) {
+        test:assertFail(msg = value.message());
+    }
+    float[] array = <float[]>value;
+    test:assertEquals(array, arrayIntended);
+}
+
+@test:Config {}
+public function testFromHandleWithPrimitiveDouble() {
     float[] arrayIntended = [8.7, 25.2, 79.1, 34.6, 2.0];
+    handle arrayHandle = getPrimitiveDoubleHandle();
     any[]|error value = fromHandle(arrayHandle, "double");
     if (value is error) {
-        return false;
+        test:assertFail(msg = value.message());
     }
     float[] array = <float[]>value;
-    if (arrayIntended == array) {
-        return true;
-    } else {
-        return false;
-    }
+    test:assertEquals(array, arrayIntended);
 }
 
+@test:Config {}
+public function testFromHandleWithDouble() {
+    float[] arrayIntended = [8.7, 25.2, 79.1, 34.6, 2.0];
+    handle arrayHandle = getDoubleHandle();
+    any[]|error value = fromHandle(arrayHandle, "double");
+    if (value is error) {
+        test:assertFail(msg = value.message());
+    }
+    float[] array = <float[]>value;
+    test:assertEquals(array, arrayIntended);
+}
 
-public function testFromHandleWithInt(handle arrayHandle) returns boolean {
+@test:Config {}
+public function testFromHandleWithPrimitiveInt() {
     int[] arrayIntended = [34, 76, 12, 90, 45];
+    handle arrayHandle = getPrimitiveIntHandle();
     any[]|error value = fromHandle(arrayHandle, "int");
     if (value is error) {
-        return false;
+        test:assertFail(msg = value.message());
     }
     int[] array = <int[]>value;
-    if (arrayIntended == array) {
-        return true;
-    } else {
-        return false;
-    }
+    test:assertEquals(array, arrayIntended);
 }
 
-public function testFromHandleWithIntFloat(handle arrayHandle) returns boolean {
+@test:Config {}
+public function testFromHandleWithInt() {
+    int[] arrayIntended = [34, 76, 12, 90, 45];
+    handle arrayHandle = getIntHandle();
+    any[]|error value = fromHandle(arrayHandle, "int");
+    if (value is error) {
+        test:assertFail(msg = value.message());
+    }
+    int[] array = <int[]>value;
+    test:assertEquals(array, arrayIntended);
+}
+
+@test:Config {}
+public function testFromHandleWithPrimitiveIntFloat() {
     float[] arrayIntended = [34, 76, 12, 90, 45];
+    handle arrayHandle = getPrimitiveIntHandle();
     any[]|error value = fromHandle(arrayHandle, "int", "float");
     if (value is error) {
-        return false;
+        test:assertFail(msg = value.message());
     }
     float[] array = <float[]>value;
-    if (arrayIntended == array) {
-        return true;
-    } else {
-        return false;
-    }
+    test:assertEquals(array, arrayIntended);
 }
 
-public function testFromHandleWithByte(handle arrayHandle) returns boolean {
+@test:Config {}
+public function testFromHandleWithIntFloat() {
+    float[] arrayIntended = [34, 76, 12, 90, 45];
+    handle arrayHandle = getIntHandle();
+    any[]|error value = fromHandle(arrayHandle, "int", "float");
+    if (value is error) {
+        test:assertFail(msg = value.message());
+    }
+    float[] array = <float[]>value;
+    test:assertEquals(array, arrayIntended);
+}
+
+@test:Config {}
+public function testFromHandleWithPrimitiveByte() {
     byte[] arrayIntended = [80, 65, 78, 32, 65];
+    handle arrayHandle = getPrimitiveByteHandle();
     any[]|error value = fromHandle(arrayHandle, "byte");
     if (value is error) {
-        return false;
+        test:assertFail(msg = value.message());
     }
     byte[] array = <byte[]>value;
-    if (arrayIntended == array) {
-        return true;
-    } else {
-        return false;
-    }
+    test:assertEquals(array, arrayIntended);
 }
 
-public function testFromHandleWithByteFloat(handle arrayHandle) returns boolean {
+@test:Config {}
+public function testFromHandleWithByte() {
+    byte[] arrayIntended = [80, 65, 78, 32, 65];
+    handle arrayHandle = getByteHandle();
+    any[]|error value = fromHandle(arrayHandle, "byte");
+    if (value is error) {
+        test:assertFail(msg = value.message());
+    }
+    byte[] array = <byte[]>value;
+    test:assertEquals(array, arrayIntended);
+}
+
+@test:Config {}
+public function testFromHandleWithPrimitiveByteFloat() {
     float[] arrayIntended = [80.0, 65.0, 78, 32, 65];
+    handle arrayHandle = getPrimitiveByteHandle();
     any[]|error value = fromHandle(arrayHandle, "byte", "float");
     if (value is error) {
-        return false;
+        test:assertFail(msg = value.message());
     }
     float[] array = <float[]>value;
-    if (arrayIntended == array) {
-        return true;
-    } else {
-        return false;
-    }
+    test:assertEquals(array, arrayIntended);
 }
 
-public function testFromHandleWithByteInt(handle arrayHandle) returns boolean {
+@test:Config {}
+public function testFromHandleWithByteFloat() {
+    float[] arrayIntended = [80.0, 65.0, 78, 32, 65];
+    handle arrayHandle = getByteHandle();
+    any[]|error value = fromHandle(arrayHandle, "byte", "float");
+    if (value is error) {
+        test:assertFail(msg = value.message());
+    }
+    float[] array = <float[]>value;
+    test:assertEquals(array, arrayIntended);
+}
+
+@test:Config {}
+public function testFromHandleWithPrimitiveByteInt() {
     int[] arrayIntended = [80, 65, 78, 32, 65];
+    handle arrayHandle = getPrimitiveByteHandle();
     any[]|error value = fromHandle(arrayHandle, "byte", "int");
     if (value is error) {
-        return false;
+        test:assertFail(msg = value.message());
     }
     int[] array = <int[]>value;
-    if (arrayIntended == array) {
-        return true;
-    } else {
-        return false;
-    }
+    test:assertEquals(array, arrayIntended);
 }
 
-public function testFromHandleWithShort(handle arrayHandle) returns boolean {
+@test:Config {}
+public function testFromHandleWithByteInt() {
+    int[] arrayIntended = [80, 65, 78, 32, 65];
+    handle arrayHandle = getByteHandle();
+    any[]|error value = fromHandle(arrayHandle, "byte", "int");
+    if (value is error) {
+        test:assertFail(msg = value.message());
+    }
+    int[] array = <int[]>value;
+    test:assertEquals(array, arrayIntended);
+}
+
+@test:Config {}
+public function testFromHandleWithPrimitiveShort() {
     int[] arrayIntended = [34, 76, 12, 90, 45];
+    handle arrayHandle = getPrimitiveShortHandle();
     any[]|error value = fromHandle(arrayHandle, "short", "int");
     if (value is error) {
-        return false;
+        test:assertFail(msg = value.message());
     }
     int[] array = <int[]>value;
-    if (arrayIntended == array) {
-        return true;
-    } else {
-        return false;
-    }
+    test:assertEquals(array, arrayIntended);
 }
 
-public function testFromHandleWithShortFloat(handle arrayHandle) returns boolean {
+@test:Config {}
+public function testFromHandleWithShort() {
+    int[] arrayIntended = [34, 76, 12, 90, 45];
+    handle arrayHandle = getShortHandle();
+    any[]|error value = fromHandle(arrayHandle, "short", "int");
+    if (value is error) {
+        test:assertFail(msg = value.message());
+    }
+    int[] array = <int[]>value;
+    test:assertEquals(array, arrayIntended);
+}
+
+@test:Config {}
+public function testFromHandleWithPrimitiveShortFloat() {
     float[] arrayIntended = [34, 76, 12, 90, 45];
+    handle arrayHandle = getPrimitiveShortHandle();
     any[]|error value = fromHandle(arrayHandle, "short", "float");
     if (value is error) {
-        return false;
+        test:assertFail(msg = value.message());
     }
     float[] array = <float[]>value;
-    if (arrayIntended == array) {
-        return true;
-    } else {
-        return false;
-    }
+    test:assertEquals(array, arrayIntended);
 }
 
-public function testFromHandleWithLong(handle arrayHandle) returns boolean {
+@test:Config {}
+public function testFromHandleWithShortFloat() {
+    float[] arrayIntended = [34, 76, 12, 90, 45];
+    handle arrayHandle = getShortHandle();
+    any[]|error value = fromHandle(arrayHandle, "short", "float");
+    if (value is error) {
+        test:assertFail(msg = value.message());
+    }
+    float[] array = <float[]>value;
+    test:assertEquals(array, arrayIntended);
+}
+
+@test:Config {}
+public function testFromHandleWithPrimitiveLong() {
     int[] arrayIntended = [34, 76, 12, 90, 45];
+    handle arrayHandle = getPrimitiveLongHandle();
     any[]|error value = fromHandle(arrayHandle, "long");
     if (value is error) {
-        return false;
+        test:assertFail(msg = value.message());
     }
     int[] array = <int[]>value;
-    if (arrayIntended == array) {
-        return true;
-    } else {
-        return false;
-    }
+    test:assertEquals(array, arrayIntended);
 }
 
-public function testFromHandleWithLongFloat(handle arrayHandle) returns boolean {
+@test:Config {}
+public function testFromHandleWithLong() {
+    int[] arrayIntended = [34, 76, 12, 90, 45];
+    handle arrayHandle = getLongHandle();
+    any[]|error value = fromHandle(arrayHandle, "long");
+    if (value is error) {
+        test:assertFail(msg = value.message());
+    }
+    int[] array = <int[]>value;
+    test:assertEquals(array, arrayIntended);
+}
+
+@test:Config {}
+public function testFromHandleWithPrimitiveLongFloat() {
     float[] arrayIntended = [34, 76, 12, 90, 45];
+    handle arrayHandle = getPrimitiveLongHandle();
     any[]|error value = fromHandle(arrayHandle, "long", "float");
     if (value is error) {
-        return false;
+        test:assertFail(msg = value.message());
     }
     float[] array = <float[]>value;
-    if (arrayIntended == array) {
-        return true;
-    } else {
-        return false;
-    }
+    test:assertEquals(array, arrayIntended);
 }
 
-public function testFromHandleWithCharacter(handle arrayHandle) returns boolean {
+@test:Config {}
+public function testFromHandleWithLongFloat() {
+    float[] arrayIntended = [34, 76, 12, 90, 45];
+    handle arrayHandle = getLongHandle();
+    any[]|error value = fromHandle(arrayHandle, "long", "float");
+    if (value is error) {
+        test:assertFail(msg = value.message());
+    }
+    float[] array = <float[]>value;
+    test:assertEquals(array, arrayIntended);
+}
+
+@test:Config {}
+public function testFromHandleWithPrimitiveCharacter() {
     int[] arrayIntended = [115, 107, 112, 119, 105];
+    handle arrayHandle = getPrimitiveCharHandle();
     any[]|error value = fromHandle(arrayHandle, "char");
         if (value is error) {
-            return false;
-        }
-    int[] array = <int[]>value;
-    if (arrayIntended == array) {
-        return true;
-    } else {
-        return false;
+        test:assertFail(msg = value.message());
     }
+    int[] array = <int[]>value;
+    test:assertEquals(array, arrayIntended);
 }
 
-public function testFromHandleWithCharacterFloat(handle arrayHandle) returns boolean {
+@test:Config {}
+public function testFromHandleWithCharacter() {
+    int[] arrayIntended = [115, 107, 112, 119, 105];
+    handle arrayHandle = getCharHandle();
+    any[]|error value = fromHandle(arrayHandle, "char");
+        if (value is error) {
+        test:assertFail(msg = value.message());
+    }
+    int[] array = <int[]>value;
+    test:assertEquals(array, arrayIntended);
+}
+
+@test:Config {}
+public function testFromHandleWithPrimitiveCharacterFloat() {
     float[] arrayIntended = [115, 107, 112, 119, 105];
+    handle arrayHandle = getPrimitiveCharHandle();
     any[]|error value = fromHandle(arrayHandle, "char", "float");
         if (value is error) {
-            return false;
-        }
-    float[] array = <float[]>value;
-    if (arrayIntended == array) {
-        return true;
-    } else {
-        return false;
+        test:assertFail(msg = value.message());
     }
+    float[] array = <float[]>value;
+    test:assertEquals(array, arrayIntended);
 }
 
-public function testFromHandleWithHandle(handle arrayHandle) returns boolean {
-    String str1 = newString("Welcome");
-    String str2 = newString("To");
-    String str3 = newString("Ballerina");
-    String[] arrayIntended = [str1, str2, str3];
+@test:Config {}
+public function testFromHandleWithCharacterFloat() {
+    float[] arrayIntended = [115, 107, 112, 119, 105];
+    handle arrayHandle = getCharHandle();
+    any[]|error value = fromHandle(arrayHandle, "char", "float");
+        if (value is error) {
+        test:assertFail(msg = value.message());
+    }
+    float[] array = <float[]>value;
+    test:assertEquals(array, arrayIntended);
+}
+
+@test:Config {}
+public function testFromHandleWithHandle() {
+    handle arrayHandle = getHandle();
     any[]|error value = fromHandle(arrayHandle, "handle");
     if (value is error) {
-        return false;
+        test:assertFail(msg = value.message());
     }
     handle[] array = <handle[]>value;
     int count = array.length();
@@ -448,11 +581,9 @@ public function testFromHandleWithHandle(handle arrayHandle) returns boolean {
         String element = new(array[i]);
         obj[i] = element;
     }
-    if (obj[0].toString() == "Welcome" || obj[1].toString() == "To" || obj[2].toString() == "Ballerina") {
-        return true;
-    } else {
-        return false;
-    }
+    test:assertEquals(obj[0].toString(), "Welcome");
+    test:assertEquals(obj[1].toString(), "To");
+    test:assertEquals(obj[2].toString(), "Ballerina");
 }
 
 @java:Binding {
@@ -480,4 +611,104 @@ public function newString(string arg0) returns String {
 function java_lang_String_newString(handle arg0) returns handle = @java:Constructor {
     class: "java.lang.String",
     paramTypes: ["java.lang.String"]
+} external;
+
+function getStringHandle() returns handle = @java:Method {
+    name: "getStringHandle",
+    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+} external;
+
+function getPrimitiveBooleanHandle() returns handle = @java:Method {
+    name: "getPrimitiveBooleanHandle",
+    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+} external;
+
+function getBooleanHandle() returns handle = @java:Method {
+    name: "getBooleanHandle",
+    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+} external;
+
+function getPrimitiveFloatHandle() returns handle = @java:Method {
+    name: "getPrimitiveFloatHandle",
+    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+} external;
+
+function getFloatHandle() returns handle = @java:Method {
+    name: "getFloatHandle",
+    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+} external;
+
+function getPrimitiveDoubleHandle() returns handle = @java:Method {
+    name: "getPrimitiveDoubleHandle",
+    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+} external;
+
+function getDoubleHandle() returns handle = @java:Method {
+    name: "getDoubleHandle",
+    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+} external;
+
+function getPrimitiveIntHandle() returns handle = @java:Method {
+    name: "getPrimitiveIntHandle",
+    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+} external;
+
+function getIntHandle() returns handle = @java:Method {
+    name: "getIntHandle",
+    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+} external;
+
+function getPrimitiveByteHandle() returns handle = @java:Method {
+    name: "getPrimitiveByteHandle",
+    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+} external;
+
+function getByteHandle() returns handle = @java:Method {
+    name: "getByteHandle",
+    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+} external;
+
+function getPrimitiveShortHandle() returns handle = @java:Method {
+    name: "getPrimitiveShortHandle",
+    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+} external;
+
+function getShortHandle() returns handle = @java:Method {
+    name: "getShortHandle",
+    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+} external;
+
+function getPrimitiveLongHandle() returns handle = @java:Method {
+    name: "getPrimitiveLongHandle",
+    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+} external;
+
+function getLongHandle() returns handle = @java:Method {
+    name: "getLongHandle",
+    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+} external;
+
+function getPrimitiveCharHandle() returns handle = @java:Method {
+    name: "getPrimitiveCharHandle",
+    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+} external;
+
+function getCharHandle() returns handle = @java:Method {
+    name: "getCharHandle",
+    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+} external;
+
+function getHandle() returns handle = @java:Method {
+    name: "getHandle",
+    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+} external;
+
+function getBStringValueFromHandle(handle h) returns string = @java:Method {
+    name: "getBStringValueFromHandle",
+    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+} external;
+
+function getJStringValue() returns handle = @java:Method {
+    name: "getJStringValue",
+    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
 } external;
