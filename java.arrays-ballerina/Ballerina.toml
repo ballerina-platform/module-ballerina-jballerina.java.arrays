@@ -12,3 +12,4 @@ target = "java8"
     groupId = "org.ballerinalang.stdlib.java.arrays.testutils"
     modules = ["java.arrays"]
     scope = "testOnly"
+    
