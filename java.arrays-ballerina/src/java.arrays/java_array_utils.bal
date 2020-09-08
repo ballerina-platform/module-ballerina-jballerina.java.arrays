@@ -26,7 +26,7 @@ import ballerina/java;
 # + class - The element type of the array
 # + dimensions - The dimensions of the array
 # + return - The new Java array instance
-public function newInstance(public handle class, int ...dimensions) returns handle = @java:Method {
+public function newInstance(handle class, int ...dimensions) returns handle = @java:Method {
     class: "java.lang.reflect.Array",
     paramTypes: ["java.lang.Class", {class: "int", dimensions:1}]
 } external;
@@ -42,7 +42,7 @@ public function newInstance(public handle class, int ...dimensions) returns hand
 # + array - The `handle`, which refers to the Java array
 # + index - The index of the element to be returned
 # + return - The `handle`, which refers to the element at the specified position in the Java array
-public function get(public handle array, public int index) returns handle = @java:Method {
+public function get(handle array, int index) returns handle = @java:Method {
     class: "java.lang.reflect.Array"
 } external;
 
@@ -58,7 +58,7 @@ public function get(public handle array, public int index) returns handle = @jav
 # + array - The `handle`, which refers to the Java array
 # + index - The index of the element to be replaced
 # + element - The element to be stored at the specified index
-public function set(public handle array, public int index, public handle element) = @java:Method {
+public function set(handle array, int index, handle element) = @java:Method {
     class: "java.lang.reflect.Array"
 } external;
 
@@ -70,7 +70,7 @@ public function set(public handle array, public int index, public handle element
 #
 # + array - The `handle`, which refers to the Java array
 # + return - The length of the given Java array
-public function getLength(public handle array) returns int = @java:Method {
+public function getLength(handle array) returns int = @java:Method {
     class: "java.lang.reflect.Array"
 } external;
 
