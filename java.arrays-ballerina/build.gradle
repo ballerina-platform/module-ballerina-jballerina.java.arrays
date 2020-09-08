@@ -163,7 +163,6 @@ task ballerinaBuild {
     finalizedBy(revertTomlFile)
 
     doLast {
-
         def additionalBuildParams = ""
         if (project.hasProperty("skipBallerinaTests")) {
             additionalBuildParams = "--skip-tests"
