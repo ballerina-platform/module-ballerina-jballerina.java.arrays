@@ -587,9 +587,9 @@ public function testFromHandleWithHandle() {
 }
 
 @java:Binding {
-  class: "java.lang.String"
+  'class: "java.lang.String"
 }
-public type String object {
+public class String {
 
     *java:JObject;
 
@@ -600,7 +600,7 @@ public type String object {
     public function toString() returns string {
         return java:jObjToString(self.jObj);
     }
-};
+}
 
 public function newString(string arg0) returns String {
     handle obj = java_lang_String_newString(java:fromString(arg0));
@@ -609,106 +609,106 @@ public function newString(string arg0) returns String {
 }
 
 function java_lang_String_newString(handle arg0) returns handle = @java:Constructor {
-    class: "java.lang.String",
+    'class: "java.lang.String",
     paramTypes: ["java.lang.String"]
 } external;
 
 function getStringHandle() returns handle = @java:Method {
     name: "getStringHandle",
-    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+    'class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
 } external;
 
 function getPrimitiveBooleanHandle() returns handle = @java:Method {
     name: "getPrimitiveBooleanHandle",
-    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+    'class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
 } external;
 
 function getBooleanHandle() returns handle = @java:Method {
     name: "getBooleanHandle",
-    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+    'class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
 } external;
 
 function getPrimitiveFloatHandle() returns handle = @java:Method {
     name: "getPrimitiveFloatHandle",
-    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+    'class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
 } external;
 
 function getFloatHandle() returns handle = @java:Method {
     name: "getFloatHandle",
-    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+    'class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
 } external;
 
 function getPrimitiveDoubleHandle() returns handle = @java:Method {
     name: "getPrimitiveDoubleHandle",
-    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+    'class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
 } external;
 
 function getDoubleHandle() returns handle = @java:Method {
     name: "getDoubleHandle",
-    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+    'class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
 } external;
 
 function getPrimitiveIntHandle() returns handle = @java:Method {
     name: "getPrimitiveIntHandle",
-    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+    'class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
 } external;
 
 function getIntHandle() returns handle = @java:Method {
     name: "getIntHandle",
-    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+    'class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
 } external;
 
 function getPrimitiveByteHandle() returns handle = @java:Method {
     name: "getPrimitiveByteHandle",
-    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+    'class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
 } external;
 
 function getByteHandle() returns handle = @java:Method {
     name: "getByteHandle",
-    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+    'class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
 } external;
 
 function getPrimitiveShortHandle() returns handle = @java:Method {
     name: "getPrimitiveShortHandle",
-    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+    'class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
 } external;
 
 function getShortHandle() returns handle = @java:Method {
     name: "getShortHandle",
-    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+    'class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
 } external;
 
 function getPrimitiveLongHandle() returns handle = @java:Method {
     name: "getPrimitiveLongHandle",
-    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+    'class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
 } external;
 
 function getLongHandle() returns handle = @java:Method {
     name: "getLongHandle",
-    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+    'class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
 } external;
 
 function getPrimitiveCharHandle() returns handle = @java:Method {
     name: "getPrimitiveCharHandle",
-    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+    'class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
 } external;
 
 function getCharHandle() returns handle = @java:Method {
     name: "getCharHandle",
-    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+    'class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
 } external;
 
 function getHandle() returns handle = @java:Method {
     name: "getHandle",
-    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+    'class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
 } external;
 
 function getBStringValueFromHandle(handle h) returns string = @java:Method {
     name: "getBStringValueFromHandle",
-    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+    'class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
 } external;
 
 function getJStringValue() returns handle = @java:Method {
     name: "getJStringValue",
-    class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
+    'class: "org.ballerinalang.stdlib.java.arrays.testutils.JHandler"
 } external;
