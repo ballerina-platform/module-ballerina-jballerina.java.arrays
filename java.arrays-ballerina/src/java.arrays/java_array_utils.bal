@@ -23,12 +23,12 @@ import ballerina/java;
 # handle StrArray = java.arrays:newInstance(stringClass, 4);
 # ```
 #
-# + class - The element type of the array
+# + classType - The element type of the array
 # + dimensions - The dimensions of the array
 # + return - The new Java array instance
-public function newInstance(handle class, int ...dimensions) returns handle = @java:Method {
-    class: "java.lang.reflect.Array",
-    paramTypes: ["java.lang.Class", {class: "int", dimensions:1}]
+public function newInstance(handle classType, int ...dimensions) returns handle = @java:Method {
+    'class: "java.lang.reflect.Array",
+    paramTypes: ["java.lang.Class", {"class": "int", dimensions:1}]
 } external;
 
 # Returns a `handle`, which refers to the element at the specified index in the given Java array. This function
@@ -43,7 +43,7 @@ public function newInstance(handle class, int ...dimensions) returns handle = @j
 # + index - The index of the element to be returned
 # + return - The `handle`, which refers to the element at the specified position in the Java array
 public function get(handle array, int index) returns handle = @java:Method {
-    class: "java.lang.reflect.Array"
+    'class: "java.lang.reflect.Array"
 } external;
 
 
@@ -59,7 +59,7 @@ public function get(handle array, int index) returns handle = @java:Method {
 # + index - The index of the element to be replaced
 # + element - The element to be stored at the specified index
 public function set(handle array, int index, handle element) = @java:Method {
-    class: "java.lang.reflect.Array"
+    'class: "java.lang.reflect.Array"
 } external;
 
 # Returns the length of the given Java array.
@@ -71,7 +71,7 @@ public function set(handle array, int index, handle element) = @java:Method {
 # + array - The `handle`, which refers to the Java array
 # + return - The length of the given Java array
 public function getLength(handle array) returns int = @java:Method {
-    class: "java.lang.reflect.Array"
+    'class: "java.lang.reflect.Array"
 } external;
 
 # Returns a Ballerina array for a handle that holds a Java array.
