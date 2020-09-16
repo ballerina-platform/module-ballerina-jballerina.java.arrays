@@ -18,6 +18,9 @@
 
 package org.ballerinalang.stdlib.java.arrays.testutils;
 
+import org.ballerinalang.jvm.api.BStringUtils;
+import org.ballerinalang.jvm.api.values.BString;
+
 /**
  * JHandler return ballerina handlers for tests.
  */
@@ -113,8 +116,8 @@ public class JHandler {
         return values;
     }
 
-    public static org.ballerinalang.jvm.values.api.BString getBStringValueFromHandle(String value) {
-        return org.ballerinalang.jvm.StringUtils.fromString(value);
+    public static BString getBStringValueFromHandle(String value) {
+        return BStringUtils.fromString(value);
     }
 
     public static String getJStringValue() {
