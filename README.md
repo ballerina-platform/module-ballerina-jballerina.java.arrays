@@ -14,11 +14,11 @@ Find API docs for the Java Arrays library [here](https://ballerina.io/swan-lake/
 
 ### Setting Up the Prerequisites
 
-* Download and install Java SE Development Kit (JDK) version 8 (from one of the following locations).
+* Download and install Java SE Development Kit (JDK) version 11 (from one of the following locations).
 
-   * [Oracle](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
+   * [Oracle](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
    
-   * [OpenJDK](http://openjdk.java.net/install/index.html)
+   * [OpenJDK](https://adoptopenjdk.net/)
    
         > **Note:** Set the JAVA_HOME environment variable to the path name of the directory into which you installed JDK.
 
@@ -30,29 +30,15 @@ Execute the commands below to build from source.
         
         ./gradlew clean build
 
-2. To run the integration tests:
+1. To run the integration tests:
 
         ./gradlew clean test
 
-3. To build the module without the tests:
+1. To build the module without the tests:
 
         ./gradlew clean build -x test
 
-4. To run only specific tests:
-
-        ./gradlew clean build -Pgroups=<Comma separated groups/test cases>
-
-   **Tip:** The following groups of test cases are available.<br>
-   Groups | Test Cases
-   ---| ---
-   connection | connection
-   pool | pool
-   transaction | transaction
-   execute | execute-basic <br> execute-params
-   batch-execute | batch-execute 
-   query | query-simple-params<br>query-numeric-params<br>query-complex-params
-
-4. To debug the tests:
+1. To debug the tests:
 
         ./gradlew clean build -Pdebug=<port>
 
