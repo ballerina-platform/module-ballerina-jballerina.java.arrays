@@ -17,6 +17,6 @@
  */
 
 module java.arrays.java.arrays.test.utils.main {
-    requires io.ballerina.jvm;
+    requires io.ballerina.runtime;
     exports org.ballerinalang.stdlib.java.arrays.testutils;
 }
