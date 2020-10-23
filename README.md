@@ -11,6 +11,12 @@ The Java Arrays library is one of the standard library modules of the<a target="
 
 Find API docs for the Java Arrays library [here](https://ballerina.io/swan-lake/learn/api-docs/ballerina/java.arrays/functions.html).
 
+## `Issues` and `Projects` 
+
+`Issues` and `Project` tabs are disabled for this repository as this is one of the Ballerina Standard Libraries. To report bugs, request new features, start new discussions, view project boards, etc. please visit Ballerina Standard Library [parent repository](https://github.com/ballerina-platform/ballerina-standard-library). 
+
+This repository only contains the source code for the module.
+
 ## Building from the Source
 
 ### Setting Up the Prerequisites
@@ -46,8 +52,6 @@ Execute the commands below to build from source.
 ## Contributing to Ballerina
 
 As an open source project, Ballerina welcomes contributions from the community. 
-
-You can also check for [open issues](https://github.com/ballerina-platform/ballerina-standard-library/labels/module%2Fjava.arrays) that interest you. We look forward to receiving your contributions.
 
 For more information, go to the [contribution guidelines](https://github.com/ballerina-platform/ballerina-lang/blob/master/CONTRIBUTING.md).
 
