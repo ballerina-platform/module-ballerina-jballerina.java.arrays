@@ -16,7 +16,7 @@
  * under the License.
  */
 
-module java.arrays.java.arrays.test.utils.main {
+module io.ballerina.stdlib.jarrays.testutils {
     requires io.ballerina.runtime;
-    exports org.ballerinalang.stdlib.java.arrays.testutils;
+    exports org.ballerinalang.stdlib.jarrays.testutils;
 }

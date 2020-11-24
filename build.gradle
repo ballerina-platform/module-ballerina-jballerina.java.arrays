@@ -93,7 +93,7 @@ release {
 }
 
 task build {
-    dependsOn('java.arrays-ballerina:build')
+    dependsOn('jarrays-ballerina:build')
 }
 
 task codeCoverageReport(type: JacocoReport) {

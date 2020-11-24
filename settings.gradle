@@ -11,9 +11,9 @@ plugins {
     id "com.gradle.enterprise" version "3.2"
 }
 
-rootProject.name = 'java.arrays'
+rootProject.name = 'jarrays'
 include(':build-config:checkstyle')
-include ':java.arrays-test-utils', ':java.arrays-ballerina'
+include ':jarrays-test-utils', ':jarrays-ballerina'
 
 gradleEnterprise {
     buildScan {
