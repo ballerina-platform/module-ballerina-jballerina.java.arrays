@@ -94,15 +94,15 @@ task copyStdlibs(type: Copy) {
     }
 }
 
-def moduleName = "java.arrays"
-def moduleOrg = "ballerina"
+def packageName = "jarrays"
+def packageOrg = "ballerina"
 def ballerinaConfigFile = new File("$project.projectDir/Ballerina.toml")
 def artifactBallerinaDocs = file("$project.projectDir/build/docs_parent/")
 def artifactCacheParent = file("$project.projectDir/build/cache_parent/")
 def artifactLibParent = file("$project.projectDir/build/lib_parent/")
 def tomlVersion = project.version.split("-")[0]
 def ballerinaCentralAccessToken = System.getenv('BALLERINA_CENTRAL_ACCESS_TOKEN')
-def targetBallerinaJar = file("$project.projectDir/target/caches/jar_cache/${moduleOrg}/${moduleName}/${tomlVersion}/${moduleOrg}-${moduleName}-${tomlVersion}.jar")
+def targetBallerinaJar = file("$project.projectDir/target/caches/jar_cache/${packageOrg}/${packageName}/${tomlVersion}/${packageOrg}-${packageName}-${tomlVersion}.jar")
 def distributionBinPath =  project.projectDir.absolutePath + "/build/target/extracted-distributions/jballerina-tools-zip/jballerina-tools-${ballerinaLangVersion}/bin"
 def originalConfig = ballerinaConfigFile.text
 
@@ -123,14 +123,9 @@ task revertTomlFile {
 
 task ballerinaTest {
     dependsOn(copyStdlibs)
-    dependsOn(":java.arrays-test-utils:build")
+    dependsOn(":jarrays-test-utils:build")
     dependsOn(updateTomlFile)
     finalizedBy(revertTomlFile)
-
-    def groupParams = ""
-    if (project.hasProperty("groups")) {
-        groupParams = "--groups ${project.findProperty("groups")}"
-    }
 
     def debugParams = ""
     if (project.hasProperty("debug")) {
@@ -142,9 +137,9 @@ task ballerinaTest {
             workingDir project.projectDir
             environment "JAVA_OPTS", "-DBALLERINA_DEV_COMPILE_BALLERINA_ORG=true"
             if (Os.isFamily(Os.FAMILY_WINDOWS)) {
-                commandLine 'cmd', '/c', "$distributionBinPath/ballerina.bat test ${groupParams} --all ${debugParams} && exit %%ERRORLEVEL%%"
+                commandLine 'cmd', '/c', "$distributionBinPath/ballerina.bat test ${debugParams} && exit %%ERRORLEVEL%%"
             } else {
-                commandLine 'sh', '-c', "$distributionBinPath/ballerina test ${groupParams} --all ${debugParams}"
+                commandLine 'sh', '-c', "$distributionBinPath/ballerina test ${debugParams}"
             }
         }
     }
@@ -157,7 +152,7 @@ test {
 
 task ballerinaBuild {
     inputs.dir file(project.projectDir)
-    dependsOn(":java.arrays-test-utils:build")
+    dependsOn(":jarrays-test-utils:build")
     dependsOn(test)
     dependsOn(updateTomlFile)
     finalizedBy(revertTomlFile)
@@ -173,39 +168,20 @@ task ballerinaBuild {
             workingDir project.projectDir
             environment "JAVA_OPTS", "-DBALLERINA_DEV_COMPILE_BALLERINA_ORG=true"
             if (Os.isFamily(Os.FAMILY_WINDOWS)) {
-                commandLine 'cmd', '/c', "$distributionBinPath/ballerina.bat build --skip-tests ${additionalBuildParams} -c ${moduleName} && exit %%ERRORLEVEL%%"
+                commandLine 'cmd', '/c', "$distributionBinPath/ballerina.bat build --skip-tests ${additionalBuildParams} -c && exit %%ERRORLEVEL%%"
             } else {
-                commandLine 'sh', '-c', "$distributionBinPath/ballerina build --skip-tests ${additionalBuildParams} -c ${moduleName}"
+                commandLine 'sh', '-c', "$distributionBinPath/ballerina build --skip-tests ${additionalBuildParams} -c"
             }
         }
         copy {
-            from file("$project.projectDir/Ballerina.toml")
-            into file("$artifactCacheParent/caches/bir/${moduleOrg}/${moduleName}/${tomlVersion}")
-        }
-        copy {
-            from file("$project.projectDir/Ballerina.toml")
-            into file("$artifactCacheParent/caches/balo/${moduleOrg}/${moduleName}/${tomlVersion}")
-        }
-        copy {
-            from file("$project.projectDir/Ballerina.toml")
-            into file("$artifactCacheParent/caches/jar/${moduleOrg}/${moduleName}/${tomlVersion}")
-        }
-        copy {
-            from file("$project.projectDir/target/caches/bir_cache")
-            into file("$artifactCacheParent/caches/bir")
-        }
-        copy {
-            from file("$project.projectDir/target/balo")
-            into file("$artifactCacheParent/caches/balo/${moduleOrg}/${moduleName}/${tomlVersion}")
-        }
-        copy {
             from targetBallerinaJar
-            into file("$artifactCacheParent/caches/jar/${moduleOrg}/${moduleName}/${tomlVersion}")
+            into file("$artifactCacheParent/caches/jar/${packageOrg}/${packageName}/${tomlVersion}")
         }
-
         copy {
-            from targetBallerinaJar
-            into file("$artifactLibParent/libs")
+            from file("$project.projectDir/target/cache")
+            exclude '**/*-testable.jar'
+            exclude '**/tests_cache/'
+            into file("$artifactCacheParent/cache/")
         }
 
         // Publish to central
@@ -215,9 +191,9 @@ task ballerinaBuild {
                 workingDir project.projectDir
                 environment "JAVA_OPTS", "-DBALLERINA_DEV_COMPILE_BALLERINA_ORG=true"
                 if (Os.isFamily(Os.FAMILY_WINDOWS)) {
-                    commandLine 'cmd', '/c', "$distributionBinPath/ballerina.bat push ${moduleName} && exit %%ERRORLEVEL%%"
+                    commandLine 'cmd', '/c', "$distributionBinPath/ballerina.bat push && exit %%ERRORLEVEL%%"
                 } else {
-                    commandLine 'sh', '-c', "$distributionBinPath/ballerina push ${moduleName}"
+                    commandLine 'sh', '-c', "$distributionBinPath/ballerina push"
                 }
             }
 
@@ -227,14 +203,14 @@ task ballerinaBuild {
             workingDir project.projectDir
             environment "JAVA_OPTS", "-DBALLERINA_DEV_COMPILE_BALLERINA_ORG=true"
             if (Os.isFamily(Os.FAMILY_WINDOWS)) {
-                commandLine 'cmd', '/c', "$distributionBinPath/ballerina.bat doc ${moduleName} && exit %%ERRORLEVEL%%"
+                commandLine 'cmd', '/c', "$distributionBinPath/ballerina.bat doc && exit %%ERRORLEVEL%%"
             } else {
-                commandLine 'sh', '-c', "$distributionBinPath/ballerina doc ${moduleName}"
+                commandLine 'sh', '-c', "$distributionBinPath/ballerina doc"
             }
         }
         copy {
-            from file("$project.projectDir/target/apidocs/${moduleName}")
-            into file("$project.projectDir/build/docs_parent/docs/${moduleName}")
+            from file("$project.projectDir/target/apidocs/${packageName}")
+            into file("$project.projectDir/build/docs_parent/docs/${packageName}")
         }
         ballerinaConfigFile.text = originalConfig
     }
