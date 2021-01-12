@@ -26,7 +26,7 @@ public function testPassingJavaIntArray() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    int[] array = <int[]>value;
+    int[] array = <int[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -39,7 +39,7 @@ public function testPassingJavaStringArray(){
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    string[] array = <string[]>value;
+    string[] array = <string[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -54,7 +54,7 @@ public function testReturningSortedJavaStringArray() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    string[] array = <string[]>value;
+    string[] array = <string[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -74,7 +74,7 @@ public function testNewJStringArrayInstanceFunction() {
         if (value is error) {
             test:assertFail(msg = value.message());
         }
-        string[] array = <string[]>value;
+        string[] array = <string[]> checkpanic value;
         test:assertEquals(array, arrayIntended);
     }
 }
@@ -95,7 +95,7 @@ public function testNewJIntArrayInstanceFunction() {
         if (value is error) {
             test:assertFail(msg = value.message());
         }
-        int[] array = <int[]>value;
+        int[] array = <int[]> checkpanic value;
         test:assertEquals(array, arrayIntended);
     }
 }
@@ -128,7 +128,7 @@ public function testSetArrayElementMethod() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    string[] strArray = <string[]>value;
+    string[] strArray = <string[]> checkpanic value;
     test:assertEquals(strArray, arrayIntended);
 }
 
