@@ -227,7 +227,7 @@ public function testFromHandleWithString() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    string[] array = <string[]>value;
+    string[] array = <string[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -239,7 +239,7 @@ public function testFromHandleWithPrimitiveBoolean() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    boolean[] array = <boolean[]>value;
+    boolean[] array = <boolean[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -251,7 +251,7 @@ public function testFromHandleWithBoolean() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    boolean[] array = <boolean[]>value;
+    boolean[] array = <boolean[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -263,7 +263,7 @@ public function testFromHandleWithPrimitiveFloat() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    float[] array = <float[]>value;
+    float[] array = <float[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -275,7 +275,7 @@ public function testFromHandleWithFloat() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    float[] array = <float[]>value;
+    float[] array = <float[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -287,7 +287,7 @@ public function testFromHandleWithPrimitiveDouble() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    float[] array = <float[]>value;
+    float[] array = <float[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -299,7 +299,7 @@ public function testFromHandleWithDouble() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    float[] array = <float[]>value;
+    float[] array = <float[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -311,7 +311,7 @@ public function testFromHandleWithPrimitiveInt() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    int[] array = <int[]>value;
+    int[] array = <int[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -323,7 +323,7 @@ public function testFromHandleWithInt() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    int[] array = <int[]>value;
+    int[] array = <int[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -335,7 +335,7 @@ public function testFromHandleWithPrimitiveIntFloat() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    float[] array = <float[]>value;
+    float[] array = <float[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -347,7 +347,7 @@ public function testFromHandleWithIntFloat() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    float[] array = <float[]>value;
+    float[] array = <float[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -359,7 +359,7 @@ public function testFromHandleWithPrimitiveByte() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    byte[] array = <byte[]>value;
+    byte[] array = <byte[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -371,7 +371,7 @@ public function testFromHandleWithByte() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    byte[] array = <byte[]>value;
+    byte[] array = <byte[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -383,7 +383,7 @@ public function testFromHandleWithPrimitiveByteFloat() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    float[] array = <float[]>value;
+    float[] array = <float[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -395,7 +395,7 @@ public function testFromHandleWithByteFloat() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    float[] array = <float[]>value;
+    float[] array = <float[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -407,7 +407,7 @@ public function testFromHandleWithPrimitiveByteInt() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    int[] array = <int[]>value;
+    int[] array = <int[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -419,7 +419,7 @@ public function testFromHandleWithByteInt() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    int[] array = <int[]>value;
+    int[] array = <int[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -431,7 +431,7 @@ public function testFromHandleWithPrimitiveShort() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    int[] array = <int[]>value;
+    int[] array = <int[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -443,7 +443,7 @@ public function testFromHandleWithShort() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    int[] array = <int[]>value;
+    int[] array = <int[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -455,7 +455,7 @@ public function testFromHandleWithPrimitiveShortFloat() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    float[] array = <float[]>value;
+    float[] array = <float[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -467,7 +467,7 @@ public function testFromHandleWithShortFloat() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    float[] array = <float[]>value;
+    float[] array = <float[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -479,7 +479,7 @@ public function testFromHandleWithPrimitiveLong() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    int[] array = <int[]>value;
+    int[] array = <int[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -491,7 +491,7 @@ public function testFromHandleWithLong() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    int[] array = <int[]>value;
+    int[] array = <int[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -503,7 +503,7 @@ public function testFromHandleWithPrimitiveLongFloat() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    float[] array = <float[]>value;
+    float[] array = <float[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -515,7 +515,7 @@ public function testFromHandleWithLongFloat() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    float[] array = <float[]>value;
+    float[] array = <float[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -527,7 +527,7 @@ public function testFromHandleWithPrimitiveCharacter() {
         if (value is error) {
         test:assertFail(msg = value.message());
     }
-    int[] array = <int[]>value;
+    int[] array = <int[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -539,7 +539,7 @@ public function testFromHandleWithCharacter() {
         if (value is error) {
         test:assertFail(msg = value.message());
     }
-    int[] array = <int[]>value;
+    int[] array = <int[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -551,7 +551,7 @@ public function testFromHandleWithPrimitiveCharacterFloat() {
         if (value is error) {
         test:assertFail(msg = value.message());
     }
-    float[] array = <float[]>value;
+    float[] array = <float[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -563,7 +563,7 @@ public function testFromHandleWithCharacterFloat() {
         if (value is error) {
         test:assertFail(msg = value.message());
     }
-    float[] array = <float[]>value;
+    float[] array = <float[]> checkpanic value;
     test:assertEquals(array, arrayIntended);
 }
 
@@ -574,7 +574,7 @@ public function testFromHandleWithHandle() {
     if (value is error) {
         test:assertFail(msg = value.message());
     }
-    handle[] array = <handle[]>value;
+    handle[] array = <handle[]> checkpanic value;
     int count = array.length();
     String[] obj = [];
     foreach int i in 0 ... count-1 {
