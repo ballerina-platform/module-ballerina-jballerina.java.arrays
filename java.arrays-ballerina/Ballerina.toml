@@ -1,0 +1,11 @@
+[package]
+org = "ballerinax"
+name = "java.arrays"
+version = "@toml.version@"
+
+[[platform.java11.dependency]]
+path = "../java.arrays-test-utils/build/libs/java.arrays-test-utils-@project.version@.jar"
+groupId = "org.ballerinalang.stdlib.java.arrays.testutils"
+artifactId = "java.arrays-test-utils"
+version = "@project.version@"
+scope = "testOnly"
