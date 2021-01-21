@@ -14,7 +14,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
-import ballerina/java;
+import ballerina/jballerina.java;
 
 // Returns a Java Boolean handle for a Ballerina boolean
 isolated function wrapBooleanToBoolean(boolean b) returns handle = @java:Constructor {
