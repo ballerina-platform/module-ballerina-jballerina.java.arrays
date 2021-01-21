@@ -94,8 +94,8 @@ task copyStdlibs(type: Copy) {
     }
 }
 
-def packageName = "jarrays"
-def packageOrg = "ballerina"
+def packageName = "java.arrays"
+def packageOrg = "ballerinax"
 def ballerinaConfigFile = new File("$project.projectDir/Ballerina.toml")
 def artifactBallerinaDocs = file("$project.projectDir/build/docs_parent/")
 def artifactCacheParent = file("$project.projectDir/build/cache_parent/")
@@ -123,7 +123,7 @@ task revertTomlFile {
 
 task ballerinaTest {
     dependsOn(copyStdlibs)
-    dependsOn(":jarrays-test-utils:build")
+    dependsOn(":java.arrays-test-utils:build")
     dependsOn(updateTomlFile)
     finalizedBy(revertTomlFile)
 
@@ -152,7 +152,7 @@ test {
 
 task ballerinaBuild {
     inputs.dir file(project.projectDir)
-    dependsOn(":jarrays-test-utils:build")
+    dependsOn(":java.arrays-test-utils:build")
     dependsOn(test)
     dependsOn(updateTomlFile)
     finalizedBy(revertTomlFile)
