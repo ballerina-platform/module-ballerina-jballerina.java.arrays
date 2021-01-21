@@ -14,7 +14,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
-import ballerina/java;
+import ballerina/jballerina.java;
 
 # Returns a new Java array instance with the specified element type and dimensions. This function completes abruptly
 # with a `panic` if the specified handle refers to a Java null or if zero dimensions have been provided.
