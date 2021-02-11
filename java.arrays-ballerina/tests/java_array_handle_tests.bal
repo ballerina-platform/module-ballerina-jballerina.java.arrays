@@ -598,7 +598,7 @@ public class String {
     }
 
     public function toString() returns string {
-        return java:jObjToString(self.jObj);
+        return java:toString(self.jObj) ?: "null";
     }
 }
 
