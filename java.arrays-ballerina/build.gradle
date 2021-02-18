@@ -245,9 +245,9 @@ ballerinaBuild.dependsOn ":${packageName}-test-utils:build"
 ballerinaBuild.finalizedBy revertTomlFile
 build.dependsOn ballerinaBuild
 
-ballerinaPublish.finalizedBy revertTomlFile
-ballerinaPublish.dependsOn initializeVariables
-ballerinaPublish.dependsOn updateTomlVersions
-ballerinaPublish.dependsOn ":${packageName}-test-utils:build"
 ballerinaPublish.dependsOn ballerinaBuild
+ballerinaPublish.dependsOn updateTomlVersions
+ballerinaPublish.dependsOn initializeVariables
+ballerinaPublish.dependsOn ":${packageName}-test-utils:build"
+ballerinaPublish.finalizedBy revertTomlFile
 publish.dependsOn ballerinaPublish
