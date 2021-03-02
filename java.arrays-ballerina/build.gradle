@@ -218,7 +218,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/ballerina-platform/module-ballerina-java.arrays")
+            url = uri("https://maven.pkg.github.com/ballerina-platform/module-ballerinax-java.arrays")
             credentials {
                 username = System.getenv("packageUser")
                 password = System.getenv("packagePAT")
