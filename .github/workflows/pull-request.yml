@@ -25,7 +25,7 @@ jobs:
                 if: failure()
                 with:
                     name: Ballerina Internal Log
-                    path: java.arrays-ballerina/ballerina-internal.log
+                    path: jballerina.java.arrays-ballerina/ballerina-internal.log
                     if-no-files-found: ignore
             -   name: Generate Codecov Report
                 if:  github.event_name == 'pull_request'

@@ -19,8 +19,8 @@ import org.apache.tools.ant.taskdefs.condition.Os
 
 description = 'Ballerina - Java Arrays Ballerina Generator'
 
-def packageName = "java.arrays"
-def packageOrg = "ballerinax"
+def packageName = "jballerina.java.arrays"
+def packageOrg = "ballerina"
 def platform = "java11"
 def ballerinaConfigFile = new File("$project.projectDir/Ballerina.toml")
 def artifactBallerinaDocs = file("$project.projectDir/build/docs_parent/")

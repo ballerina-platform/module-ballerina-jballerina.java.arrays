@@ -81,5 +81,5 @@ release {
 }
 
 task build {
-    dependsOn('java.arrays-ballerina:build')
+    dependsOn('jballerina.java.arrays-ballerina:build')
 }
