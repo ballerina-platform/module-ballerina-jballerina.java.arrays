@@ -1,11 +1,11 @@
 Ballerina Java Arrays Library
 ===================
 
-  [![Build](https://github.com/ballerina-platform/module-ballerinax-java.arrays/workflows/Build/badge.svg)](https://github.com/ballerina-platform/module-ballerinax-java.arrays/actions?query=workflow%3ABuild)
-  [![GitHub Last Commit](https://img.shields.io/github/last-commit/ballerina-platform/module-ballerinax-java.arrays.svg)](https://github.com/ballerina-platform/module-ballerinax-java.arrays/commits/master)
-  [![Github issues](https://img.shields.io/github/issues/ballerina-platform/ballerina-standard-library/module/java.arrays.svg?label=Open%20Issues)](https://github.com/ballerina-platform/ballerina-standard-library/labels/module%2Fjava.arrays)
+  [![Build](https://github.com/ballerina-platform/module-ballerina-jballerina.java.arrays/workflows/Build/badge.svg)](https://github.com/ballerina-platform/module-ballerina-jballerina.java.arrays/actions?query=workflow%3ABuild)
+  [![GitHub Last Commit](https://img.shields.io/github/last-commit/ballerina-platform/module-ballerina-jballerina.java.arrays.svg)](https://github.com/ballerina-platform/module-ballerina-jballerina.java.arrays/commits/master)
+  [![Github issues](https://img.shields.io/github/issues/ballerina-platform/ballerina-standard-library/module/jballerina.java.arrays.svg?label=Open%20Issues)](https://github.com/ballerina-platform/ballerina-standard-library/labels/module%2Fjballerina.java.arrays)
   [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-  [![codecov](https://codecov.io/gh/ballerina-platform/module-ballerinax-java.arrays/branch/master/graph/badge.svg)](https://codecov.io/gh/ballerina-platform/module-ballerinax-java.arrays)
+  [![codecov](https://codecov.io/gh/ballerina-platform/module-ballerina-jballerina.java.arrays/branch/master/graph/badge.svg)](https://codecov.io/gh/ballerina-platform/module-ballerina-jballerina.java.arrays)
 
 The Java Arrays library is one of the standard library modules of the<a target="_blank" href="https://ballerina.io/"> Ballerina</a> language.
 

@@ -20,7 +20,7 @@ import ballerina/jballerina.java;
 # with a `panic` if the specified handle refers to a Java null or if zero dimensions have been provided.
 # ```ballerina
 # handle stringClass = check java:getClass("java.lang.String");
-# handle StrArray = java.arrays:newInstance(stringClass, 4);
+# handle StrArray = arrays:newInstance(stringClass, 4);
 # ```
 #
 # + classType - The element type of the array
@@ -36,7 +36,7 @@ public function newInstance(handle classType, int ...dimensions) returns handle 
 # to a Java array.
 # ```ballerina
 # handle words = getSortedArray();
-# handle firstWord = java.arrays:get(words, 0);
+# handle firstWord = arrays:get(words, 0);
 # ```
 #
 # + array - The `handle`, which refers to the Java array
@@ -52,7 +52,7 @@ public function get(handle array, int index) returns handle = @java:Method {
 # not refer to a Java array.
 # ```ballerina
 # handle strArray = getStringArray();
-# java.arrays:set(strArray, 0, java:fromString("Ballerina"));
+# arrays:set(strArray, 0, java:fromString("Ballerina"));
 # ```
 #
 # + array - The `handle`, which refers to the Java array
@@ -65,7 +65,7 @@ public function set(handle array, int index, handle element) = @java:Method {
 # Returns the length of the given Java array.
 # ```ballerina
 # handle array = getArray();
-# int length = java.arrays:getLength(array);
+# int length = arrays:getLength(array);
 # ```
 #
 # + array - The `handle`, which refers to the Java array
@@ -76,7 +76,7 @@ public function getLength(handle array) returns int = @java:Method {
 
 # Returns a Ballerina array for a handle that holds a Java array.
 # ```ballerina
-# int[] array = <int[]> check java.arrays:fromHandle(arrayHandle, "int");
+# int[] array = <int[]> check arrays:fromHandle(arrayHandle, "int");
 # ```
 #
 # + array - The `handle`, which refers to the Java array
@@ -201,7 +201,7 @@ public function fromHandle(handle array, string jType, string bType = "default")
             }
             return returnFloatArray;
         } else {
-            return error("{ballerina/java.arrays} Handle to array conversion cannot be applied on the provided types");
+            return error("{ballerina/jballerina.java.arrays} Handle to array conversion cannot be applied on the provided types");
         }
     }
     return returnArray;
@@ -209,7 +209,7 @@ public function fromHandle(handle array, string jType, string bType = "default")
 
 # Returns a handle value representation for a Ballerina array.
 # ```ballerina
-# handle handleValue = check java.arrays:toHandle(array, "char");
+# handle handleValue = check arrays:toHandle(array, "char");
 # ```
 #
 # + array - Ballerina array which is to be converted to a handle reference
@@ -287,7 +287,7 @@ public function toHandle(any[] array, string jType) returns handle|error {
             set(returnHandle, count, jObject.jObj);
             count+=1;
         } else {
-            return error("{ballerina/java.arrays} Array to handle conversion cannot be applied on the provided types");
+            return error("{ballerina/jballerina.java.arrays} Array to handle conversion cannot be applied on the provided types");
         }
     }
     return returnHandle;

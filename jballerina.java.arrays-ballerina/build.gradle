@@ -19,8 +19,8 @@ import org.apache.tools.ant.taskdefs.condition.Os
 
 description = 'Ballerina - Java Arrays Ballerina Generator'
 
-def packageName = "java.arrays"
-def packageOrg = "ballerinax"
+def packageName = "jballerina.java.arrays"
+def packageOrg = "ballerina"
 def platform = "java11"
 def ballerinaConfigFile = new File("$project.projectDir/Ballerina.toml")
 def artifactBallerinaDocs = file("$project.projectDir/build/docs_parent/")
@@ -222,7 +222,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/ballerina-platform/module-ballerinax-java.arrays")
+            url = uri("https://maven.pkg.github.com/ballerina-platform/module-ballerina-jballerina.java.arrays")
             credentials {
                 username = System.getenv("packageUser")
                 password = System.getenv("packagePAT")
