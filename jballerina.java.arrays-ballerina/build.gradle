@@ -118,7 +118,7 @@ task initializeVariables {
     gradle.taskGraph.whenReady { graph ->
         if (graph.hasTask(":${packageName}-ballerina:build") ||
                 graph.hasTask(":${packageName}-ballerina:publish") ||
-                graph.hasTask(":${packageName}-ballerina:publishToMavenLocal"))  {
+                graph.hasTask(":${packageName}-ballerina:publishToMavenLocal")) {
             needSeparateTest = false
 
             if (graph.hasTask(":${packageName}-ballerina:build")) {
@@ -200,24 +200,24 @@ task ballerinaBuild {
         }
 
         if (needPublishToCentral) {
-        if (project.version.endsWith('-SNAPSHOT') ||
-                project.version.matches(project.ext.timestampedVersionRegex)) {
-            return
-        }
-        if (ballerinaCentralAccessToken != null) {
-            println("Publishing to the ballerina central..")
-            exec {
-                workingDir project.projectDir
-                environment "JAVA_OPTS", "-DBALLERINA_DEV_COMPILE_BALLERINA_ORG=true"
-                if (Os.isFamily(Os.FAMILY_WINDOWS)) {
-                    commandLine 'cmd', '/c', "$distributionBinPath/bal.bat push && exit %%ERRORLEVEL%%"
-                } else {
-                    commandLine 'sh', '-c', "$distributionBinPath/bal push"
-                }
+            if (project.version.endsWith('-SNAPSHOT') ||
+                    project.version.matches(project.ext.timestampedVersionRegex)) {
+                return
             }
-        } else {
-            throw new InvalidUserDataException("Central Access Token is not present")
-        }
+            if (ballerinaCentralAccessToken != null) {
+                println("Publishing to the ballerina central..")
+                exec {
+                    workingDir project.projectDir
+                    environment "JAVA_OPTS", "-DBALLERINA_DEV_COMPILE_BALLERINA_ORG=true"
+                    if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+                        commandLine 'cmd', '/c', "$distributionBinPath/bal.bat push && exit %%ERRORLEVEL%%"
+                    } else {
+                        commandLine 'sh', '-c', "$distributionBinPath/bal push"
+                    }
+                }
+            } else {
+                throw new InvalidUserDataException("Central Access Token is not present")
+            }
         }
     }
 
