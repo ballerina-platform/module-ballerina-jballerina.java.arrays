@@ -53,6 +53,18 @@ Execute the commands below to build from source.
 
         ./gradlew clean build -Pdebug=<port>
 
+1. Publish ZIP artifact to the local `.m2` repository:
+
+        ./gradlew clean build publishToMavenLocal
+
+1. Publish the generated artifacts to the local Ballerina central repository:
+   
+        ./gradlew clean build -PpublishToLocalCentral=true
+1. Publish the generated artifacts to the Ballerina central repository:
+
+        ./gradlew clean build -PpublishToCentral=true
+
+   
 ## Contributing to Ballerina
 
 As an open source project, Ballerina welcomes contributions from the community. 
