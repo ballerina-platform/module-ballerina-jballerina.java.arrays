@@ -33,9 +33,8 @@ description = 'Ballerina - Java Arrays Ballerina Generator'
 
 def packageName = "jballerina.java.arrays"
 def packageOrg = "ballerina"
-def platform = "java11"
-def ballerinaConfigFile = new File("$project.projectDir/Ballerina.toml")
 def tomlVersion = stripBallerinaExtensionVersion("${project.version}")
+def ballerinaConfigFile = new File("$project.projectDir/Ballerina.toml")
 def originalConfig = ballerinaConfigFile.text
 
 def stripBallerinaExtensionVersion(String extVersion) {
@@ -55,12 +54,13 @@ def stripBallerinaExtensionVersion(String extVersion) {
 apply plugin: 'io.ballerina.plugin'
 
 ballerina {
+    packageOrganization = packageOrg
     module = packageName
     langVersion = ballerinaLangVersion
     testCoverageParam = "--code-coverage --jacoco-xml --includes=*"
 }
 
-task updateTomlVersions {
+task updateTomlFiles {
     doLast {
         def newConfig = ballerinaConfigFile.text.replace("@project.version@", project.version)
         newConfig = newConfig.replace("@toml.version@", tomlVersion)
@@ -69,7 +69,7 @@ task updateTomlVersions {
     }
 }
 
-task revertTomlFile {
+task revertTomlFiles {
     doLast {
         ballerinaConfigFile.text = originalConfig
     }
@@ -94,7 +94,7 @@ publishing {
     }
 }
 
-updateTomlVersions.dependsOn unpackJballerinaTools
+updateTomlFiles.dependsOn unpackJballerinaTools
 test.dependsOn ":${packageName}-test-utils:build"
 build.dependsOn ":${packageName}-test-utils:build"
 publishToMavenLocal.dependsOn build
