@@ -26,7 +26,7 @@ import ballerina/jballerina.java;
 # + classType - The element type of the array
 # + dimensions - The dimensions of the array
 # + return - The new Java array instance
-public function newInstance(handle classType, int ...dimensions) returns handle = @java:Method {
+public isolated function newInstance(handle classType, int ...dimensions) returns handle = @java:Method {
     'class: "java.lang.reflect.Array",
     paramTypes: ["java.lang.Class", {"class": "int", dimensions:1}]
 } external;
@@ -42,7 +42,7 @@ public function newInstance(handle classType, int ...dimensions) returns handle 
 # + array - The `handle`, which refers to the Java array
 # + index - The index of the element to be returned
 # + return - The `handle`, which refers to the element at the specified position in the Java array
-public function get(handle array, int index) returns handle = @java:Method {
+public isolated function get(handle array, int index) returns handle = @java:Method {
     'class: "java.lang.reflect.Array"
 } external;
 
@@ -58,7 +58,7 @@ public function get(handle array, int index) returns handle = @java:Method {
 # + array - The `handle`, which refers to the Java array
 # + index - The index of the element to be replaced
 # + element - The element to be stored at the specified index
-public function set(handle array, int index, handle element) = @java:Method {
+public isolated function set(handle array, int index, handle element) = @java:Method {
     'class: "java.lang.reflect.Array"
 } external;
 
@@ -70,7 +70,7 @@ public function set(handle array, int index, handle element) = @java:Method {
 #
 # + array - The `handle`, which refers to the Java array
 # + return - The length of the given Java array
-public function getLength(handle array) returns int = @java:Method {
+public isolated function getLength(handle array) returns int = @java:Method {
     'class: "java.lang.reflect.Array"
 } external;
 
@@ -83,7 +83,7 @@ public function getLength(handle array) returns int = @java:Method {
 # + jType - The `string` parameter provided to specify the Java array element type
 # + bType - The optional `string` parameter provided to specify the Ballerina array element type
 # + return - Ballerina array `any[]|error` for the provided handle
-public function fromHandle(handle array, string jType, string bType = "default") returns any[]|error {
+public isolated function fromHandle(handle array, string jType, string bType = "default") returns any[]|error {
     int count = getLength(array);
     any[] returnArray = [];
     if (!java:isNull(array)) {
@@ -215,7 +215,7 @@ public function fromHandle(handle array, string jType, string bType = "default")
 # + array - Ballerina array which is to be converted to a handle reference
 # + jType - Java class name or the primitive type of the array elements referenced by the handle
 # + return - The `handle|error` after the conversion
-public function toHandle(any[] array, string jType) returns handle|error {
+public isolated function toHandle(any[] array, string jType) returns handle|error {
     handle returnHandle = newInstance(check java:getClass(jType), array.length());
     int count=0;
     while (count < array.length()) {

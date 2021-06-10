@@ -18,7 +18,7 @@ import ballerina/jballerina.java;
 import ballerina/test;
 
 @test:Config {}
-public function testPassingJavaIntArray() {
+isolated function testPassingJavaIntArray() {
     int[] arrayIntended = [12, 34, 45, 76, 90];
     handle arrayHandle = getPrimitiveIntHandle();
     sortJavaIntArray(arrayHandle);
@@ -31,7 +31,7 @@ public function testPassingJavaIntArray() {
 }
 
 @test:Config {}
-public function testPassingJavaStringArray(){
+isolated function testPassingJavaStringArray(){
     string[] arrayIntended = ["Five", "Nine", "Seven", "Three", "Two"];
     handle arrayHandle = getStringHandle();
     sortJavaStringArray(arrayHandle);
@@ -44,7 +44,7 @@ public function testPassingJavaStringArray(){
 }
 
 @test:Config {}
-public function testReturningSortedJavaStringArray() {
+isolated function testReturningSortedJavaStringArray() {
     string[] arrayIntended = ["Ballerina", "Language", "Programming", "Specification"];
     handle receiver = java:fromString("Ballerina Programming Language Specification");
     handle regex = java:fromString(" ");
@@ -59,7 +59,7 @@ public function testReturningSortedJavaStringArray() {
 }
 
 @test:Config {}
-public function testNewJStringArrayInstanceFunction() {
+isolated function testNewJStringArrayInstanceFunction() {
     string[] arrayIntended = ["Ballerina", "Programming", "Language", "Specification"];
     var jStringClass = java:getClass("java.lang.String");
     if (jStringClass is error) {
@@ -80,7 +80,7 @@ public function testNewJStringArrayInstanceFunction() {
 }
 
 @test:Config {}
-public function testNewJIntArrayInstanceFunction() {
+isolated function testNewJIntArrayInstanceFunction() {
     int[] arrayIntended = [10, 100, 1000, 10000];
     var jIntClass = java:getClass("int");
     if (jIntClass is error) {
@@ -101,7 +101,7 @@ public function testNewJIntArrayInstanceFunction() {
 }
 
 @test:Config {}
-public function testGetArrayElementMethod() {
+isolated function testGetArrayElementMethod() {
     string[] arrayIntended = ["Ballerina", "Language", "Programming", "Specification"];
     handle array = getSortedJavaStringArray();
     handle elem0 = get(array, 0);
@@ -119,7 +119,7 @@ public function testGetArrayElementMethod() {
 }
 
 @test:Config {}
-public function testSetArrayElementMethod() {
+isolated function testSetArrayElementMethod() {
     string[] arrayIntended = ["Bal", "Language", "Programming", "Specification"];
     handle array = getSortedJavaStringArray();
     handle jString = getJStringValue();
@@ -133,13 +133,13 @@ public function testSetArrayElementMethod() {
 }
 
 @test:Config {}
-public function testGetArrayLengthMethod() {
+isolated function testGetArrayLengthMethod() {
    handle array = getSortedJavaStringArray();
    int length = getLength(array);
    test:assertEquals(length, 4);
 }
 
-public function getSortedJavaStringArray() returns handle {
+isolated function getSortedJavaStringArray() returns handle {
     handle receiver = java:fromString("Ballerina Programming Language Specification");
     handle regex = java:fromString(" ");
     handle parts = splitString(receiver, regex);
@@ -148,24 +148,24 @@ public function getSortedJavaStringArray() returns handle {
 }
 
 
-public function sortJavaIntArray(handle arrayValue) = @java:Method {
+isolated function sortJavaIntArray(handle arrayValue) = @java:Method {
     name:"sort",
     'class: "java.util.Arrays",
     paramTypes:["[I"]
 } external;
 
-public function sortJavaStringArray(handle arrayValue) = @java:Method {
+isolated function sortJavaStringArray(handle arrayValue) = @java:Method {
     name:"sort",
     'class: "java.util.Arrays",
     paramTypes:["[Ljava.lang.String;"]
 } external;
 
-public function splitString(handle receiver, handle regex) returns handle = @java:Method {
+isolated function splitString(handle receiver, handle regex) returns handle = @java:Method {
     name:"split",
     'class: "java/lang/String"
 } external;
 
-function wrapInt(int i) returns handle = @java:Constructor {
+isolated function wrapInt(int i) returns handle = @java:Constructor {
         'class: "java.lang.Integer",
         paramTypes: ["int"]
 } external;
