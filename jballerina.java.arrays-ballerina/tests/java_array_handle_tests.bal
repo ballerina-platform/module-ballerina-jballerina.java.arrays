@@ -18,7 +18,7 @@ import ballerina/jballerina.java;
 import ballerina/test;
 
 @test:Config {}
-public function testToHandleWithString() {
+isolated function testToHandleWithString() {
     string[] array = ["Five", "Two", "Nine", "Three", "Seven"];
     var result = toHandle(array, "java.lang.String");
     if (result is error) {
@@ -27,7 +27,7 @@ public function testToHandleWithString() {
 }
 
 @test:Config {}
-public function testToHandleWithByte() {
+isolated function testToHandleWithByte() {
     byte[] array = [80, 65, 78, 32, 65];
     var result = toHandle(array, "byte");
     if (result is error) {
@@ -36,7 +36,7 @@ public function testToHandleWithByte() {
 }
 
 @test:Config {}
-public function testToHandleWithByteChar() {
+isolated function testToHandleWithByteChar() {
     byte[] array = [80, 65, 78, 32, 65];
     var result = toHandle(array, "char");
     if (result is error) {
@@ -45,7 +45,7 @@ public function testToHandleWithByteChar() {
 }
 
 @test:Config {}
-public function testToHandleWithByteShort() {
+isolated function testToHandleWithByteShort() {
     byte[] array = [80, 65, 78, 32, 65];
     var result = toHandle(array, "short");
     if (result is error) {
@@ -54,7 +54,7 @@ public function testToHandleWithByteShort() {
 }
 
 @test:Config {}
-public function testToHandleWithByteLong() {
+isolated function testToHandleWithByteLong() {
     byte[] array = [80, 65, 78, 32, 65];
     var result = toHandle(array, "long");
     if (result is error) {
@@ -63,7 +63,7 @@ public function testToHandleWithByteLong() {
 }
 
 @test:Config {}
-public function testToHandleWithByteInt() {
+isolated function testToHandleWithByteInt() {
     byte[] array = [80, 65, 78, 32, 65];
     var result = toHandle(array, "int");
     if (result is error) {
@@ -72,7 +72,7 @@ public function testToHandleWithByteInt() {
 }
 
 @test:Config {}
-public function testToHandleWithByteFloat() {
+isolated function testToHandleWithByteFloat() {
     byte[] array = [80, 65, 78, 32, 65];
     var result = toHandle(array, "float");
     if (result is error) {
@@ -81,7 +81,7 @@ public function testToHandleWithByteFloat() {
 }
 
 @test:Config {}
-public function testToHandleWithByteDouble() {
+isolated function testToHandleWithByteDouble() {
     byte[] array = [80, 65, 78, 32, 65];
     var result = toHandle(array, "double");
     if (result is error) {
@@ -90,7 +90,7 @@ public function testToHandleWithByteDouble() {
 }
 
 @test:Config {}
-public function testToHandleWithInt() {
+isolated function testToHandleWithInt() {
     int[] array = [8, 25, 79, 34, 2];
     var result = toHandle(array, "int");
     if (result is error) {
@@ -99,7 +99,7 @@ public function testToHandleWithInt() {
 }
 
 @test:Config {}
-public function testToHandleWithIntByte() {
+isolated function testToHandleWithIntByte() {
     int[] array = [8, 25, 79, 34, 2];
     var result = toHandle(array, "byte");
     if (result is error) {
@@ -108,7 +108,7 @@ public function testToHandleWithIntByte() {
 }
 
 @test:Config {}
-public function testToHandleWithIntChar() {
+isolated function testToHandleWithIntChar() {
     int[] array = [8, 25, 79, 34, 2];
     var result = toHandle(array, "char");
     if (result is error) {
@@ -117,7 +117,7 @@ public function testToHandleWithIntChar() {
 }
 
 @test:Config {}
-public function testToHandleWithIntLong() {
+isolated function testToHandleWithIntLong() {
     int[] array = [8, 25, 79, 34, 2];
     var result = toHandle(array, "long");
     if (result is error) {
@@ -126,7 +126,7 @@ public function testToHandleWithIntLong() {
 }
 
 @test:Config {}
-public function testToHandleWithIntShort() {
+isolated function testToHandleWithIntShort() {
     int[] array = [8, 25, 79, 34, 2];
     var result = toHandle(array, "short");
     if (result is error) {
@@ -135,7 +135,7 @@ public function testToHandleWithIntShort() {
 }
 
 @test:Config {}
-public function testToHandleWithFloat() {
+isolated function testToHandleWithFloat() {
     float[] array = [8.7, 25.2, 79.1, 34.6, 2];
     var result = toHandle(array, "float");
     if (result is error) {
@@ -144,7 +144,7 @@ public function testToHandleWithFloat() {
 }
 
 @test:Config {}
-public function testToHandleWithFloatChar() {
+isolated function testToHandleWithFloatChar() {
     float[] array = [8.7, 25.2, 79.1, 34.6, 2];
     var result = toHandle(array, "char");
     if (result is error) {
@@ -153,7 +153,7 @@ public function testToHandleWithFloatChar() {
 }
 
 @test:Config {}
-public function testToHandleWithFloatByte() {
+isolated function testToHandleWithFloatByte() {
     float[] array = [8.7, 25.2, 79.1, 34.6, 2];
     var result = toHandle(array, "byte");
     if (result is error) {
@@ -162,7 +162,7 @@ public function testToHandleWithFloatByte() {
 }
 
 @test:Config {}
-public function testToHandleWithFloatShort() {
+isolated function testToHandleWithFloatShort() {
     float[] array = [8.7, 25.2, 79.1, 34.6, 2];
     var result = toHandle(array, "short");
     if (result is error) {
@@ -171,7 +171,7 @@ public function testToHandleWithFloatShort() {
 }
 
 @test:Config {}
-public function testToHandleWithFloatLong() {
+isolated function testToHandleWithFloatLong() {
     float[] array = [8.7, 25.2, 79.1, 34.6, 2];
     var result = toHandle(array, "long");
     if (result is error) {
@@ -180,7 +180,7 @@ public function testToHandleWithFloatLong() {
 }
 
 @test:Config {}
-public function testToHandleWithFloatDouble() {
+isolated function testToHandleWithFloatDouble() {
     float[] array = [8.7, 25.2, 79.1, 34.6, 2];
     var result = toHandle(array, "double");
     if (result is error) {
@@ -189,7 +189,7 @@ public function testToHandleWithFloatDouble() {
 }
 
 @test:Config {}
-public function testToHandleWithFloatInt() {
+isolated function testToHandleWithFloatInt() {
     float[] array = [8.7, 25.2, 79.1, 34.6, 2];
     var result = toHandle(array, "int");
     if (result is error) {
@@ -198,7 +198,7 @@ public function testToHandleWithFloatInt() {
 }
 
 @test:Config {}
-public function testToHandleWithBoolean() {
+isolated function testToHandleWithBoolean() {
     boolean[] array = [true, true, false, true];
     var result = toHandle(array, "boolean");
     if (result is error) {
@@ -207,7 +207,7 @@ public function testToHandleWithBoolean() {
 }
 
 @test:Config {}
-public function testToHandleWithJObject() {
+isolated function testToHandleWithJObject() {
     String str1 = newString("Welcome");
     String str2 = newString("To");
     String str3 = newString("Ballerina");
@@ -220,7 +220,7 @@ public function testToHandleWithJObject() {
 }
 
 @test:Config {}
-public function testFromHandleWithString() {
+isolated function testFromHandleWithString() {
     string[] arrayIntended = ["Five", "Two", "Nine", "Three", "Seven"];
     handle arrayHandle = getStringHandle();
     any[]|error value = fromHandle(arrayHandle, "string");
@@ -232,7 +232,7 @@ public function testFromHandleWithString() {
 }
 
 @test:Config {}
-public function testFromHandleWithPrimitiveBoolean() {
+isolated function testFromHandleWithPrimitiveBoolean() {
     boolean[] arrayIntended = [true, true, false, true];
     handle arrayHandle = getPrimitiveBooleanHandle();
     any[]|error value = fromHandle(arrayHandle, "boolean");
@@ -244,7 +244,7 @@ public function testFromHandleWithPrimitiveBoolean() {
 }
 
 @test:Config {}
-public function testFromHandleWithBoolean() {
+isolated function testFromHandleWithBoolean() {
     boolean[] arrayIntended = [true, true, false, true];
     handle arrayHandle = getBooleanHandle();
     any[]|error value = fromHandle(arrayHandle, "boolean");
@@ -256,7 +256,7 @@ public function testFromHandleWithBoolean() {
 }
 
 @test:Config {}
-public function testFromHandleWithPrimitiveFloat() {
+isolated function testFromHandleWithPrimitiveFloat() {
     float[] arrayIntended = [8.699999809265137, 25.200000762939453, 79.0999984741211, 34.599998474121094, 2.0];
     handle arrayHandle = getPrimitiveFloatHandle();
     any[]|error value = fromHandle(arrayHandle, "float");
@@ -268,7 +268,7 @@ public function testFromHandleWithPrimitiveFloat() {
 }
 
 @test:Config {}
-public function testFromHandleWithFloat() {
+isolated function testFromHandleWithFloat() {
     float[] arrayIntended = [8.699999809265137, 25.200000762939453, 79.0999984741211, 34.599998474121094, 2.0];
     handle arrayHandle = getFloatHandle();
     any[]|error value = fromHandle(arrayHandle, "float");
@@ -280,7 +280,7 @@ public function testFromHandleWithFloat() {
 }
 
 @test:Config {}
-public function testFromHandleWithPrimitiveDouble() {
+isolated function testFromHandleWithPrimitiveDouble() {
     float[] arrayIntended = [8.7, 25.2, 79.1, 34.6, 2.0];
     handle arrayHandle = getPrimitiveDoubleHandle();
     any[]|error value = fromHandle(arrayHandle, "double");
@@ -292,7 +292,7 @@ public function testFromHandleWithPrimitiveDouble() {
 }
 
 @test:Config {}
-public function testFromHandleWithDouble() {
+isolated function testFromHandleWithDouble() {
     float[] arrayIntended = [8.7, 25.2, 79.1, 34.6, 2.0];
     handle arrayHandle = getDoubleHandle();
     any[]|error value = fromHandle(arrayHandle, "double");
@@ -304,7 +304,7 @@ public function testFromHandleWithDouble() {
 }
 
 @test:Config {}
-public function testFromHandleWithPrimitiveInt() {
+isolated function testFromHandleWithPrimitiveInt() {
     int[] arrayIntended = [34, 76, 12, 90, 45];
     handle arrayHandle = getPrimitiveIntHandle();
     any[]|error value = fromHandle(arrayHandle, "int");
@@ -316,7 +316,7 @@ public function testFromHandleWithPrimitiveInt() {
 }
 
 @test:Config {}
-public function testFromHandleWithInt() {
+isolated function testFromHandleWithInt() {
     int[] arrayIntended = [34, 76, 12, 90, 45];
     handle arrayHandle = getIntHandle();
     any[]|error value = fromHandle(arrayHandle, "int");
@@ -328,7 +328,7 @@ public function testFromHandleWithInt() {
 }
 
 @test:Config {}
-public function testFromHandleWithPrimitiveIntFloat() {
+isolated function testFromHandleWithPrimitiveIntFloat() {
     float[] arrayIntended = [34, 76, 12, 90, 45];
     handle arrayHandle = getPrimitiveIntHandle();
     any[]|error value = fromHandle(arrayHandle, "int", "float");
@@ -340,7 +340,7 @@ public function testFromHandleWithPrimitiveIntFloat() {
 }
 
 @test:Config {}
-public function testFromHandleWithIntFloat() {
+isolated function testFromHandleWithIntFloat() {
     float[] arrayIntended = [34, 76, 12, 90, 45];
     handle arrayHandle = getIntHandle();
     any[]|error value = fromHandle(arrayHandle, "int", "float");
@@ -352,7 +352,7 @@ public function testFromHandleWithIntFloat() {
 }
 
 @test:Config {}
-public function testFromHandleWithPrimitiveByte() {
+isolated function testFromHandleWithPrimitiveByte() {
     byte[] arrayIntended = [80, 65, 78, 32, 65];
     handle arrayHandle = getPrimitiveByteHandle();
     any[]|error value = fromHandle(arrayHandle, "byte");
@@ -364,7 +364,7 @@ public function testFromHandleWithPrimitiveByte() {
 }
 
 @test:Config {}
-public function testFromHandleWithByte() {
+isolated function testFromHandleWithByte() {
     byte[] arrayIntended = [80, 65, 78, 32, 65];
     handle arrayHandle = getByteHandle();
     any[]|error value = fromHandle(arrayHandle, "byte");
@@ -376,7 +376,7 @@ public function testFromHandleWithByte() {
 }
 
 @test:Config {}
-public function testFromHandleWithPrimitiveByteFloat() {
+isolated function testFromHandleWithPrimitiveByteFloat() {
     float[] arrayIntended = [80.0, 65.0, 78, 32, 65];
     handle arrayHandle = getPrimitiveByteHandle();
     any[]|error value = fromHandle(arrayHandle, "byte", "float");
@@ -388,7 +388,7 @@ public function testFromHandleWithPrimitiveByteFloat() {
 }
 
 @test:Config {}
-public function testFromHandleWithByteFloat() {
+isolated function testFromHandleWithByteFloat() {
     float[] arrayIntended = [80.0, 65.0, 78, 32, 65];
     handle arrayHandle = getByteHandle();
     any[]|error value = fromHandle(arrayHandle, "byte", "float");
@@ -400,7 +400,7 @@ public function testFromHandleWithByteFloat() {
 }
 
 @test:Config {}
-public function testFromHandleWithPrimitiveByteInt() {
+isolated function testFromHandleWithPrimitiveByteInt() {
     int[] arrayIntended = [80, 65, 78, 32, 65];
     handle arrayHandle = getPrimitiveByteHandle();
     any[]|error value = fromHandle(arrayHandle, "byte", "int");
@@ -412,7 +412,7 @@ public function testFromHandleWithPrimitiveByteInt() {
 }
 
 @test:Config {}
-public function testFromHandleWithByteInt() {
+isolated function testFromHandleWithByteInt() {
     int[] arrayIntended = [80, 65, 78, 32, 65];
     handle arrayHandle = getByteHandle();
     any[]|error value = fromHandle(arrayHandle, "byte", "int");
@@ -424,7 +424,7 @@ public function testFromHandleWithByteInt() {
 }
 
 @test:Config {}
-public function testFromHandleWithPrimitiveShort() {
+isolated function testFromHandleWithPrimitiveShort() {
     int[] arrayIntended = [34, 76, 12, 90, 45];
     handle arrayHandle = getPrimitiveShortHandle();
     any[]|error value = fromHandle(arrayHandle, "short", "int");
@@ -436,7 +436,7 @@ public function testFromHandleWithPrimitiveShort() {
 }
 
 @test:Config {}
-public function testFromHandleWithShort() {
+isolated function testFromHandleWithShort() {
     int[] arrayIntended = [34, 76, 12, 90, 45];
     handle arrayHandle = getShortHandle();
     any[]|error value = fromHandle(arrayHandle, "short", "int");
@@ -448,7 +448,7 @@ public function testFromHandleWithShort() {
 }
 
 @test:Config {}
-public function testFromHandleWithPrimitiveShortFloat() {
+isolated function testFromHandleWithPrimitiveShortFloat() {
     float[] arrayIntended = [34, 76, 12, 90, 45];
     handle arrayHandle = getPrimitiveShortHandle();
     any[]|error value = fromHandle(arrayHandle, "short", "float");
@@ -460,7 +460,7 @@ public function testFromHandleWithPrimitiveShortFloat() {
 }
 
 @test:Config {}
-public function testFromHandleWithShortFloat() {
+isolated function testFromHandleWithShortFloat() {
     float[] arrayIntended = [34, 76, 12, 90, 45];
     handle arrayHandle = getShortHandle();
     any[]|error value = fromHandle(arrayHandle, "short", "float");
@@ -472,7 +472,7 @@ public function testFromHandleWithShortFloat() {
 }
 
 @test:Config {}
-public function testFromHandleWithPrimitiveLong() {
+isolated function testFromHandleWithPrimitiveLong() {
     int[] arrayIntended = [34, 76, 12, 90, 45];
     handle arrayHandle = getPrimitiveLongHandle();
     any[]|error value = fromHandle(arrayHandle, "long");
@@ -484,7 +484,7 @@ public function testFromHandleWithPrimitiveLong() {
 }
 
 @test:Config {}
-public function testFromHandleWithLong() {
+isolated function testFromHandleWithLong() {
     int[] arrayIntended = [34, 76, 12, 90, 45];
     handle arrayHandle = getLongHandle();
     any[]|error value = fromHandle(arrayHandle, "long");
@@ -496,7 +496,7 @@ public function testFromHandleWithLong() {
 }
 
 @test:Config {}
-public function testFromHandleWithPrimitiveLongFloat() {
+isolated function testFromHandleWithPrimitiveLongFloat() {
     float[] arrayIntended = [34, 76, 12, 90, 45];
     handle arrayHandle = getPrimitiveLongHandle();
     any[]|error value = fromHandle(arrayHandle, "long", "float");
@@ -508,7 +508,7 @@ public function testFromHandleWithPrimitiveLongFloat() {
 }
 
 @test:Config {}
-public function testFromHandleWithLongFloat() {
+isolated function testFromHandleWithLongFloat() {
     float[] arrayIntended = [34, 76, 12, 90, 45];
     handle arrayHandle = getLongHandle();
     any[]|error value = fromHandle(arrayHandle, "long", "float");
@@ -520,7 +520,7 @@ public function testFromHandleWithLongFloat() {
 }
 
 @test:Config {}
-public function testFromHandleWithPrimitiveCharacter() {
+isolated function testFromHandleWithPrimitiveCharacter() {
     int[] arrayIntended = [115, 107, 112, 119, 105];
     handle arrayHandle = getPrimitiveCharHandle();
     any[]|error value = fromHandle(arrayHandle, "char");
@@ -532,7 +532,7 @@ public function testFromHandleWithPrimitiveCharacter() {
 }
 
 @test:Config {}
-public function testFromHandleWithCharacter() {
+isolated function testFromHandleWithCharacter() {
     int[] arrayIntended = [115, 107, 112, 119, 105];
     handle arrayHandle = getCharHandle();
     any[]|error value = fromHandle(arrayHandle, "char");
@@ -544,7 +544,7 @@ public function testFromHandleWithCharacter() {
 }
 
 @test:Config {}
-public function testFromHandleWithPrimitiveCharacterFloat() {
+isolated function testFromHandleWithPrimitiveCharacterFloat() {
     float[] arrayIntended = [115, 107, 112, 119, 105];
     handle arrayHandle = getPrimitiveCharHandle();
     any[]|error value = fromHandle(arrayHandle, "char", "float");
@@ -556,7 +556,7 @@ public function testFromHandleWithPrimitiveCharacterFloat() {
 }
 
 @test:Config {}
-public function testFromHandleWithCharacterFloat() {
+isolated function testFromHandleWithCharacterFloat() {
     float[] arrayIntended = [115, 107, 112, 119, 105];
     handle arrayHandle = getCharHandle();
     any[]|error value = fromHandle(arrayHandle, "char", "float");
@@ -568,7 +568,7 @@ public function testFromHandleWithCharacterFloat() {
 }
 
 @test:Config {}
-public function testFromHandleWithHandle() {
+isolated function testFromHandleWithHandle() {
     handle arrayHandle = getHandle();
     any[]|error value = fromHandle(arrayHandle, "handle");
     if (value is error) {
@@ -593,122 +593,122 @@ public class String {
 
     *java:JObject;
 
-    public function init(handle obj) {
+    public isolated function init(handle obj) {
         self.jObj = obj;
     }
 
-    public function toString() returns string {
+    public isolated function toString() returns string {
         return java:toString(self.jObj) ?: "null";
     }
 }
 
-public function newString(string arg0) returns String {
+isolated function newString(string arg0) returns String {
     handle obj = java_lang_String_newString(java:fromString(arg0));
     String _string = new(obj);
     return _string;
 }
 
-function java_lang_String_newString(handle arg0) returns handle = @java:Constructor {
+isolated function java_lang_String_newString(handle arg0) returns handle = @java:Constructor {
     'class: "java.lang.String",
     paramTypes: ["java.lang.String"]
 } external;
 
-function getStringHandle() returns handle = @java:Method {
+isolated function getStringHandle() returns handle = @java:Method {
     name: "getStringHandle",
     'class: "org.ballerinalang.stdlib.jballerina.java.arrays.testutils.JHandler"
 } external;
 
-function getPrimitiveBooleanHandle() returns handle = @java:Method {
+isolated function getPrimitiveBooleanHandle() returns handle = @java:Method {
     name: "getPrimitiveBooleanHandle",
     'class: "org.ballerinalang.stdlib.jballerina.java.arrays.testutils.JHandler"
 } external;
 
-function getBooleanHandle() returns handle = @java:Method {
+isolated function getBooleanHandle() returns handle = @java:Method {
     name: "getBooleanHandle",
     'class: "org.ballerinalang.stdlib.jballerina.java.arrays.testutils.JHandler"
 } external;
 
-function getPrimitiveFloatHandle() returns handle = @java:Method {
+isolated function getPrimitiveFloatHandle() returns handle = @java:Method {
     name: "getPrimitiveFloatHandle",
     'class: "org.ballerinalang.stdlib.jballerina.java.arrays.testutils.JHandler"
 } external;
 
-function getFloatHandle() returns handle = @java:Method {
+isolated function getFloatHandle() returns handle = @java:Method {
     name: "getFloatHandle",
     'class: "org.ballerinalang.stdlib.jballerina.java.arrays.testutils.JHandler"
 } external;
 
-function getPrimitiveDoubleHandle() returns handle = @java:Method {
+isolated function getPrimitiveDoubleHandle() returns handle = @java:Method {
     name: "getPrimitiveDoubleHandle",
     'class: "org.ballerinalang.stdlib.jballerina.java.arrays.testutils.JHandler"
 } external;
 
-function getDoubleHandle() returns handle = @java:Method {
+isolated function getDoubleHandle() returns handle = @java:Method {
     name: "getDoubleHandle",
     'class: "org.ballerinalang.stdlib.jballerina.java.arrays.testutils.JHandler"
 } external;
 
-function getPrimitiveIntHandle() returns handle = @java:Method {
+isolated function getPrimitiveIntHandle() returns handle = @java:Method {
     name: "getPrimitiveIntHandle",
     'class: "org.ballerinalang.stdlib.jballerina.java.arrays.testutils.JHandler"
 } external;
 
-function getIntHandle() returns handle = @java:Method {
+isolated function getIntHandle() returns handle = @java:Method {
     name: "getIntHandle",
     'class: "org.ballerinalang.stdlib.jballerina.java.arrays.testutils.JHandler"
 } external;
 
-function getPrimitiveByteHandle() returns handle = @java:Method {
+isolated function getPrimitiveByteHandle() returns handle = @java:Method {
     name: "getPrimitiveByteHandle",
     'class: "org.ballerinalang.stdlib.jballerina.java.arrays.testutils.JHandler"
 } external;
 
-function getByteHandle() returns handle = @java:Method {
+isolated function getByteHandle() returns handle = @java:Method {
     name: "getByteHandle",
     'class: "org.ballerinalang.stdlib.jballerina.java.arrays.testutils.JHandler"
 } external;
 
-function getPrimitiveShortHandle() returns handle = @java:Method {
+isolated function getPrimitiveShortHandle() returns handle = @java:Method {
     name: "getPrimitiveShortHandle",
     'class: "org.ballerinalang.stdlib.jballerina.java.arrays.testutils.JHandler"
 } external;
 
-function getShortHandle() returns handle = @java:Method {
+isolated function getShortHandle() returns handle = @java:Method {
     name: "getShortHandle",
     'class: "org.ballerinalang.stdlib.jballerina.java.arrays.testutils.JHandler"
 } external;
 
-function getPrimitiveLongHandle() returns handle = @java:Method {
+isolated function getPrimitiveLongHandle() returns handle = @java:Method {
     name: "getPrimitiveLongHandle",
     'class: "org.ballerinalang.stdlib.jballerina.java.arrays.testutils.JHandler"
 } external;
 
-function getLongHandle() returns handle = @java:Method {
+isolated function getLongHandle() returns handle = @java:Method {
     name: "getLongHandle",
     'class: "org.ballerinalang.stdlib.jballerina.java.arrays.testutils.JHandler"
 } external;
 
-function getPrimitiveCharHandle() returns handle = @java:Method {
+isolated function getPrimitiveCharHandle() returns handle = @java:Method {
     name: "getPrimitiveCharHandle",
     'class: "org.ballerinalang.stdlib.jballerina.java.arrays.testutils.JHandler"
 } external;
 
-function getCharHandle() returns handle = @java:Method {
+isolated function getCharHandle() returns handle = @java:Method {
     name: "getCharHandle",
     'class: "org.ballerinalang.stdlib.jballerina.java.arrays.testutils.JHandler"
 } external;
 
-function getHandle() returns handle = @java:Method {
+isolated function getHandle() returns handle = @java:Method {
     name: "getHandle",
     'class: "org.ballerinalang.stdlib.jballerina.java.arrays.testutils.JHandler"
 } external;
 
-function getBStringValueFromHandle(handle h) returns string = @java:Method {
+isolated function getBStringValueFromHandle(handle h) returns string = @java:Method {
     name: "getBStringValueFromHandle",
     'class: "org.ballerinalang.stdlib.jballerina.java.arrays.testutils.JHandler"
 } external;
 
-function getJStringValue() returns handle = @java:Method {
+isolated function getJStringValue() returns handle = @java:Method {
     name: "getJStringValue",
     'class: "org.ballerinalang.stdlib.jballerina.java.arrays.testutils.JHandler"
 } external;
