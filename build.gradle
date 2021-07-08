@@ -24,7 +24,7 @@ plugins {
 
 
 allprojects {
-    group = 'org.ballerinalang'
+    group = 'io.ballerina'
     version = project.version
 
     apply plugin: 'jacoco'
