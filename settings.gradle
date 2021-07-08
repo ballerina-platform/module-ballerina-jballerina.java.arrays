@@ -12,8 +12,13 @@ plugins {
 }
 
 rootProject.name = 'jballerina.java.arrays'
-include(':build-config:checkstyle')
-include ':jballerina.java.arrays-test-utils', ':jballerina.java.arrays-ballerina'
+include ':checkstyle'
+include ':jballerina.java.arrays-test-utils'
+include ':jballerina.java.arrays-ballerina'
+
+project(':checkstyle').projectDir = file("build-config${File.separator}checkstyle")
+project(':jballerina.java.arrays-test-utils').projectDir = file('test-utils')
+project(':jballerina.java.arrays-ballerina').projectDir = file('ballerina')
 
 gradleEnterprise {
     buildScan {
