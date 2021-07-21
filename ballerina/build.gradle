@@ -96,6 +96,7 @@ publishing {
 
 updateTomlFiles.dependsOn unpackJballerinaTools
 test.dependsOn ":${packageName}-test-utils:build"
+build.dependsOn "generatePomFileForMavenPublication"
 build.dependsOn ":${packageName}-test-utils:build"
 publishToMavenLocal.dependsOn build
 publish.dependsOn build
