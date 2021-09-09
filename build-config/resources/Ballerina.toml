@@ -1,0 +1,10 @@
+[package]
+org = "ballerina"
+name = "jballerina.java.arrays"
+version = "@toml.version@"
+distribution = "slbeta3"
+
+[[platform.java11.dependency]]
+path = "../test-utils/build/libs/jballerina.java.arrays-test-utils-@project.version@.jar"
+version = "@project.version@"
+scope = "testOnly"
