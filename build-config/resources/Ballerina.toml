@@ -2,6 +2,10 @@
 org = "ballerina"
 name = "jballerina.java.arrays"
 version = "@toml.version@"
+authors = ["Ballerina"]
+keywords = ["java", "arrays"]
+repository = "https://github.com/ballerina-platform/module-ballerina-jballerina.java.arrays"
+license = ["Apache-2.0"]
 distribution = "slbeta3"
 
 [[platform.java11.dependency]]
