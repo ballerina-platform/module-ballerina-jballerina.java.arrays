@@ -220,361 +220,271 @@ isolated function testToHandleWithJObject() {
 }
 
 @test:Config {}
-isolated function testFromHandleWithString() {
+isolated function testFromHandleWithString() returns error? {
     string[] arrayIntended = ["Five", "Two", "Nine", "Three", "Seven"];
     handle arrayHandle = getStringHandle();
-    any[]|error value = fromHandle(arrayHandle, "string");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    string[] array = <string[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "string");
+    string[] array = <string[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithPrimitiveBoolean() {
+isolated function testFromHandleWithPrimitiveBoolean() returns error? {
     boolean[] arrayIntended = [true, true, false, true];
     handle arrayHandle = getPrimitiveBooleanHandle();
-    any[]|error value = fromHandle(arrayHandle, "boolean");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    boolean[] array = <boolean[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "boolean");
+    boolean[] array = <boolean[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithBoolean() {
+isolated function testFromHandleWithBoolean() returns error? {
     boolean[] arrayIntended = [true, true, false, true];
     handle arrayHandle = getBooleanHandle();
-    any[]|error value = fromHandle(arrayHandle, "boolean");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    boolean[] array = <boolean[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "boolean");
+    boolean[] array = <boolean[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithPrimitiveFloat() {
+isolated function testFromHandleWithPrimitiveFloat() returns error? {
     float[] arrayIntended = [8.699999809265137, 25.200000762939453, 79.0999984741211, 34.599998474121094, 2.0];
     handle arrayHandle = getPrimitiveFloatHandle();
-    any[]|error value = fromHandle(arrayHandle, "float");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    float[] array = <float[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "float");
+    float[] array = <float[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithFloat() {
+isolated function testFromHandleWithFloat() returns error? {
     float[] arrayIntended = [8.699999809265137, 25.200000762939453, 79.0999984741211, 34.599998474121094, 2.0];
     handle arrayHandle = getFloatHandle();
-    any[]|error value = fromHandle(arrayHandle, "float");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    float[] array = <float[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "float");
+    float[] array = <float[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithPrimitiveDouble() {
+isolated function testFromHandleWithPrimitiveDouble() returns error? {
     float[] arrayIntended = [8.7, 25.2, 79.1, 34.6, 2.0];
     handle arrayHandle = getPrimitiveDoubleHandle();
-    any[]|error value = fromHandle(arrayHandle, "double");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    float[] array = <float[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "double");
+    float[] array = <float[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithDouble() {
+isolated function testFromHandleWithDouble() returns error? {
     float[] arrayIntended = [8.7, 25.2, 79.1, 34.6, 2.0];
     handle arrayHandle = getDoubleHandle();
-    any[]|error value = fromHandle(arrayHandle, "double");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    float[] array = <float[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "double");
+    float[] array = <float[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithPrimitiveInt() {
+isolated function testFromHandleWithPrimitiveInt() returns error? {
     int[] arrayIntended = [34, 76, 12, 90, 45];
     handle arrayHandle = getPrimitiveIntHandle();
-    any[]|error value = fromHandle(arrayHandle, "int");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    int[] array = <int[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "int");
+    int[] array = <int[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithInt() {
+isolated function testFromHandleWithInt() returns error? {
     int[] arrayIntended = [34, 76, 12, 90, 45];
     handle arrayHandle = getIntHandle();
-    any[]|error value = fromHandle(arrayHandle, "int");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    int[] array = <int[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "int");
+    int[] array = <int[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithPrimitiveIntFloat() {
+isolated function testFromHandleWithPrimitiveIntFloat() returns error?  {
     float[] arrayIntended = [34, 76, 12, 90, 45];
     handle arrayHandle = getPrimitiveIntHandle();
-    any[]|error value = fromHandle(arrayHandle, "int", "float");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    float[] array = <float[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "int", "float");
+    float[] array = <float[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithIntFloat() {
+isolated function testFromHandleWithIntFloat() returns error? {
     float[] arrayIntended = [34, 76, 12, 90, 45];
     handle arrayHandle = getIntHandle();
-    any[]|error value = fromHandle(arrayHandle, "int", "float");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    float[] array = <float[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "int", "float");
+    float[] array = <float[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithPrimitiveByte() {
+isolated function testFromHandleWithPrimitiveByte() returns error? {
     byte[] arrayIntended = [80, 65, 78, 32, 65];
     handle arrayHandle = getPrimitiveByteHandle();
-    any[]|error value = fromHandle(arrayHandle, "byte");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    byte[] array = <byte[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "byte");
+    byte[] array = <byte[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithByte() {
+isolated function testFromHandleWithByte() returns error? {
     byte[] arrayIntended = [80, 65, 78, 32, 65];
     handle arrayHandle = getByteHandle();
-    any[]|error value = fromHandle(arrayHandle, "byte");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    byte[] array = <byte[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "byte");
+    byte[] array = <byte[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithPrimitiveByteFloat() {
+isolated function testFromHandleWithPrimitiveByteFloat() returns error? {
     float[] arrayIntended = [80.0, 65.0, 78, 32, 65];
     handle arrayHandle = getPrimitiveByteHandle();
-    any[]|error value = fromHandle(arrayHandle, "byte", "float");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    float[] array = <float[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "byte", "float");
+    float[] array = <float[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithByteFloat() {
+isolated function testFromHandleWithByteFloat() returns error? {
     float[] arrayIntended = [80.0, 65.0, 78, 32, 65];
     handle arrayHandle = getByteHandle();
-    any[]|error value = fromHandle(arrayHandle, "byte", "float");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    float[] array = <float[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "byte", "float");
+    float[] array = <float[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithPrimitiveByteInt() {
+isolated function testFromHandleWithPrimitiveByteInt() returns error? {
     int[] arrayIntended = [80, 65, 78, 32, 65];
     handle arrayHandle = getPrimitiveByteHandle();
-    any[]|error value = fromHandle(arrayHandle, "byte", "int");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    int[] array = <int[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "byte", "int");
+    int[] array = <int[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithByteInt() {
+isolated function testFromHandleWithByteInt() returns error? {
     int[] arrayIntended = [80, 65, 78, 32, 65];
     handle arrayHandle = getByteHandle();
-    any[]|error value = fromHandle(arrayHandle, "byte", "int");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    int[] array = <int[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "byte", "int");
+    int[] array = <int[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithPrimitiveShort() {
+isolated function testFromHandleWithPrimitiveShort() returns error? {
     int[] arrayIntended = [34, 76, 12, 90, 45];
     handle arrayHandle = getPrimitiveShortHandle();
-    any[]|error value = fromHandle(arrayHandle, "short", "int");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    int[] array = <int[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "short", "int");
+    int[] array = <int[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithShort() {
+isolated function testFromHandleWithShort() returns error? {
     int[] arrayIntended = [34, 76, 12, 90, 45];
     handle arrayHandle = getShortHandle();
-    any[]|error value = fromHandle(arrayHandle, "short", "int");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    int[] array = <int[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "short", "int");
+    int[] array = <int[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithPrimitiveShortFloat() {
+isolated function testFromHandleWithPrimitiveShortFloat() returns error? {
     float[] arrayIntended = [34, 76, 12, 90, 45];
     handle arrayHandle = getPrimitiveShortHandle();
-    any[]|error value = fromHandle(arrayHandle, "short", "float");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    float[] array = <float[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "short", "float");
+    float[] array = <float[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithShortFloat() {
+isolated function testFromHandleWithShortFloat() returns error? {
     float[] arrayIntended = [34, 76, 12, 90, 45];
     handle arrayHandle = getShortHandle();
-    any[]|error value = fromHandle(arrayHandle, "short", "float");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    float[] array = <float[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "short", "float");
+    float[] array = <float[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithPrimitiveLong() {
+isolated function testFromHandleWithPrimitiveLong() returns error? {
     int[] arrayIntended = [34, 76, 12, 90, 45];
     handle arrayHandle = getPrimitiveLongHandle();
-    any[]|error value = fromHandle(arrayHandle, "long");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    int[] array = <int[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "long");
+    int[] array = <int[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithLong() {
+isolated function testFromHandleWithLong() returns error? {
     int[] arrayIntended = [34, 76, 12, 90, 45];
     handle arrayHandle = getLongHandle();
-    any[]|error value = fromHandle(arrayHandle, "long");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    int[] array = <int[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "long");
+    int[] array = <int[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithPrimitiveLongFloat() {
+isolated function testFromHandleWithPrimitiveLongFloat() returns error? {
     float[] arrayIntended = [34, 76, 12, 90, 45];
     handle arrayHandle = getPrimitiveLongHandle();
-    any[]|error value = fromHandle(arrayHandle, "long", "float");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    float[] array = <float[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "long", "float");
+    float[] array = <float[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithLongFloat() {
+isolated function testFromHandleWithLongFloat() returns error? {
     float[] arrayIntended = [34, 76, 12, 90, 45];
     handle arrayHandle = getLongHandle();
-    any[]|error value = fromHandle(arrayHandle, "long", "float");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    float[] array = <float[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "long", "float");
+    float[] array = <float[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithPrimitiveCharacter() {
+isolated function testFromHandleWithPrimitiveCharacter() returns error? {
     int[] arrayIntended = [115, 107, 112, 119, 105];
     handle arrayHandle = getPrimitiveCharHandle();
-    any[]|error value = fromHandle(arrayHandle, "char");
-        if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    int[] array = <int[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "char");
+    int[] array = <int[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithCharacter() {
+isolated function testFromHandleWithCharacter() returns error? {
     int[] arrayIntended = [115, 107, 112, 119, 105];
     handle arrayHandle = getCharHandle();
-    any[]|error value = fromHandle(arrayHandle, "char");
-        if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    int[] array = <int[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "char");
+    int[] array = <int[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithPrimitiveCharacterFloat() {
+isolated function testFromHandleWithPrimitiveCharacterFloat() returns error? {
     float[] arrayIntended = [115, 107, 112, 119, 105];
     handle arrayHandle = getPrimitiveCharHandle();
-    any[]|error value = fromHandle(arrayHandle, "char", "float");
-        if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    float[] array = <float[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "char", "float");
+    float[] array = <float[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithCharacterFloat() {
+isolated function testFromHandleWithCharacterFloat() returns error? {
     float[] arrayIntended = [115, 107, 112, 119, 105];
     handle arrayHandle = getCharHandle();
-    any[]|error value = fromHandle(arrayHandle, "char", "float");
-        if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    float[] array = <float[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "char", "float");
+    float[] array = <float[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testFromHandleWithHandle() {
+isolated function testFromHandleWithHandle() returns error? {
     handle arrayHandle = getHandle();
-    any[]|error value = fromHandle(arrayHandle, "handle");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    handle[] array = <handle[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "handle");
+    handle[] array = <handle[]> value;
     int count = array.length();
     String[] obj = [];
     foreach int i in 0 ... count-1 {

@@ -18,51 +18,42 @@ import ballerina/jballerina.java;
 import ballerina/test;
 
 @test:Config {}
-isolated function testPassingJavaIntArray() {
+isolated function testPassingJavaIntArray() returns error? {
     int[] arrayIntended = [12, 34, 45, 76, 90];
     handle arrayHandle = getPrimitiveIntHandle();
     sortJavaIntArray(arrayHandle);
-    any[]|error value = fromHandle(arrayHandle, "int");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    int[] array = <int[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "int");
+    int[] array = <int[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testPassingJavaStringArray(){
+isolated function testPassingJavaStringArray() returns error? {
     string[] arrayIntended = ["Five", "Nine", "Seven", "Three", "Two"];
     handle arrayHandle = getStringHandle();
     sortJavaStringArray(arrayHandle);
-    any[]|error value = fromHandle(arrayHandle, "string");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    string[] array = <string[]> checkpanic value;
+    any[] value = check fromHandle(arrayHandle, "string");
+    string[] array = <string[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testReturningSortedJavaStringArray() {
+isolated function testReturningSortedJavaStringArray() returns error? {
     string[] arrayIntended = ["Ballerina", "Language", "Programming", "Specification"];
     handle receiver = java:fromString("Ballerina Programming Language Specification");
     handle regex = java:fromString(" ");
     handle parts = splitString(receiver, regex);
     sortJavaStringArray(parts);
-    any[]|error value = fromHandle(parts, "string");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    string[] array = <string[]> checkpanic value;
+    any[] value = check fromHandle(parts, "string");
+    string[] array = <string[]> value;
     test:assertEquals(array, arrayIntended);
 }
 
 @test:Config {}
-isolated function testNewJStringArrayInstanceFunction() {
+isolated function testNewJStringArrayInstanceFunction() returns error? {
     string[] arrayIntended = ["Ballerina", "Programming", "Language", "Specification"];
     var jStringClass = java:getClass("java.lang.String");
-    if (jStringClass is error) {
+    if jStringClass is error {
         test:assertFail(msg = jStringClass.message());
     } else {
         handle jStrArray = newInstance(jStringClass, 4);
@@ -70,20 +61,17 @@ isolated function testNewJStringArrayInstanceFunction() {
         set(jStrArray, 1, java:fromString("Programming"));
         set(jStrArray, 2, java:fromString("Language"));
         set(jStrArray, 3, java:fromString("Specification"));
-        any[]|error value = fromHandle(jStrArray, "string");
-        if (value is error) {
-            test:assertFail(msg = value.message());
-        }
-        string[] array = <string[]> checkpanic value;
+        any[] value = check fromHandle(jStrArray, "string");
+        string[] array = <string[]> value;
         test:assertEquals(array, arrayIntended);
     }
 }
 
 @test:Config {}
-isolated function testNewJIntArrayInstanceFunction() {
+isolated function testNewJIntArrayInstanceFunction() returns error? {
     int[] arrayIntended = [10, 100, 1000, 10000];
     var jIntClass = java:getClass("int");
-    if (jIntClass is error) {
+    if jIntClass is error {
         test:assertFail(msg = jIntClass.message());
     } else {
         handle jIntArray = newInstance(jIntClass, 4);
@@ -91,17 +79,14 @@ isolated function testNewJIntArrayInstanceFunction() {
         set(jIntArray, 1, wrapInt(100));
         set(jIntArray, 2, wrapInt(1000));
         set(jIntArray, 3, wrapInt(10000));
-        any[]|error value = fromHandle(jIntArray, "int");
-        if (value is error) {
-            test:assertFail(msg = value.message());
-        }
-        int[] array = <int[]> checkpanic value;
+        any[] value = check fromHandle(jIntArray, "int");
+        int[] array = <int[]> value;
         test:assertEquals(array, arrayIntended);
     }
 }
 
 @test:Config {}
-isolated function testGetArrayElementMethod() {
+isolated function testGetArrayElementMethod() returns error? {
     string[] arrayIntended = ["Ballerina", "Language", "Programming", "Specification"];
     handle array = getSortedJavaStringArray();
     handle elem0 = get(array, 0);
@@ -119,16 +104,13 @@ isolated function testGetArrayElementMethod() {
 }
 
 @test:Config {}
-isolated function testSetArrayElementMethod() {
+isolated function testSetArrayElementMethod() returns error? {
     string[] arrayIntended = ["Bal", "Language", "Programming", "Specification"];
     handle array = getSortedJavaStringArray();
     handle jString = getJStringValue();
     set(array, 0, jString);
-    any[]|error value = fromHandle(array, "string");
-    if (value is error) {
-        test:assertFail(msg = value.message());
-    }
-    string[] strArray = <string[]> checkpanic value;
+    any[] value = check fromHandle(array, "string");
+    string[] strArray = <string[]> value;
     test:assertEquals(strArray, arrayIntended);
 }
 
