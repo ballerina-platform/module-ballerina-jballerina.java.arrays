@@ -6,7 +6,7 @@ authors = ["Ballerina"]
 keywords = ["java", "arrays"]
 repository = "https://github.com/ballerina-platform/module-ballerina-jballerina.java.arrays"
 license = ["Apache-2.0"]
-distribution = "slbeta3"
+distribution = "slbeta6"
 
 [[platform.java11.dependency]]
 path = "../test-utils/build/libs/jballerina.java.arrays-test-utils-@project.version@.jar"
