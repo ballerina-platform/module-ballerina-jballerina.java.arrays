@@ -5,7 +5,7 @@ version = "1.2.0"
 authors = ["Ballerina"]
 keywords = ["java", "arrays"]
 repository = "https://github.com/ballerina-platform/module-ballerina-jballerina.java.arrays"
-icon = "resources/icon.png"
+icon = "icon.png"
 license = ["Apache-2.0"]
 distribution = "2201.0.0"
 
