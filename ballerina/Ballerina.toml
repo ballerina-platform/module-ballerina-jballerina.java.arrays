@@ -10,6 +10,6 @@ license = ["Apache-2.0"]
 distribution = "2201.0.0"
 
 [[platform.java11.dependency]]
-path = "../test-utils/build/libs/jballerina.java.arrays-test-utils-1.2.0-SNAPSHOT.jar"
-version = "1.2.0-SNAPSHOT"
+path = "../test-utils/build/libs/jballerina.java.arrays-test-utils-1.2.0.jar"
+version = "1.2.0"
 scope = "testOnly"
