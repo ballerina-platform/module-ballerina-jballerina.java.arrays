@@ -7,9 +7,38 @@ Ballerina Java Arrays Library
   [![Github issues](https://img.shields.io/github/issues/ballerina-platform/ballerina-standard-library/module/jballerina.java.arrays.svg?label=Open%20Issues)](https://github.com/ballerina-platform/ballerina-standard-library/labels/module%2Fjballerina.java.arrays)
   [![codecov](https://codecov.io/gh/ballerina-platform/module-ballerina-jballerina.java.arrays/branch/master/graph/badge.svg)](https://codecov.io/gh/ballerina-platform/module-ballerina-jballerina.java.arrays)
 
-The Java Arrays library is one of the standard library modules of the<a target="_blank" href="https://ballerina.io/"> Ballerina</a> language.
+This library provides APIs to create new Java array instances, get elements from arrays, set elements, etc.
 
-Find API docs for the Java Arrays library [here](https://ballerina.io/swan-lake/learn/api-docs/ballerina/java.arrays/functions.html).
+#### Create a Java array instance
+```ballerina
+handle stringClass = check java:getClass("java.lang.String");
+handle StrArray = arrays:newInstance(stringClass, 4);
+```
+
+#### Get an element from a Java array
+```ballerina
+handle firstWord = arrays:get(words, 0);
+```
+
+#### Replace an element in a Java array
+```ballerina
+arrays:set(strArray, 0, java:fromString("Ballerina"));
+```
+
+#### Get Java array length
+```ballerina
+int length = arrays:getLength(array);
+```
+
+#### Get a Ballerina array from a Java array
+```ballerina
+int[] array = <int[]> check arrays:fromHandle(arrayHandle, "int");
+```
+
+#### Get a Java array from a Ballerina array
+```ballerina
+handle handleValue = check arrays:toHandle(bArray, "char");
+```
 
 ## Issues and Projects 
 
@@ -79,3 +108,4 @@ All contributors are encouraged to read the [Ballerina Code of Conduct](https://
 
 * Chat live with us via our [Slack channel](https://ballerina.io/community/slack/).
 * Post all technical questions on Stack Overflow with the [#ballerina](https://stackoverflow.com/questions/tagged/ballerina) tag.
+* For more information go to [the Java arrays Package](https://lib.ballerina.io/ballerina/jballerina.java.arrays/latest).
