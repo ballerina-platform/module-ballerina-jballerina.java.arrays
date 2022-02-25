@@ -7,7 +7,7 @@ keywords = ["java", "arrays"]
 repository = "https://github.com/ballerina-platform/module-ballerina-jballerina.java.arrays"
 icon = "icon.png"
 license = ["Apache-2.0"]
-distribution = "2201.0.0"
+distribution = "2201.0.1"
 
 [[platform.java11.dependency]]
 path = "../test-utils/build/libs/jballerina.java.arrays-test-utils-@project.version@.jar"
