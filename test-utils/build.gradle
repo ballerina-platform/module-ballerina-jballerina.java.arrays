@@ -24,7 +24,6 @@ plugins {
 description = 'Ballerina - Java Arrays Test Utils'
 
 dependencies {
-    implementation group: 'org.ballerinalang', name: 'ballerina-core', version: "${ballerinaLangVersion}"
     implementation group: 'org.ballerinalang', name: 'ballerina-runtime', version: "${ballerinaLangVersion}"
 
     checkstyle project(":checkstyle")
