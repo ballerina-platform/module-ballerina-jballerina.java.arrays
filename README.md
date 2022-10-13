@@ -106,6 +106,6 @@ All contributors are encouraged to read the [Ballerina Code of Conduct](https://
 
 ## Useful links
 
-* Chat live with us via our [Slack channel](https://ballerina.io/community/slack/).
+* Chat live with us via our [Discord server](https://discord.gg/ballerinalang).
 * Post all technical questions on Stack Overflow with the [#ballerina](https://stackoverflow.com/questions/tagged/ballerina) tag.
 * For more information go to [the Java arrays Package](https://lib.ballerina.io/ballerina/jballerina.java.arrays/latest).
