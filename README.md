@@ -2,10 +2,11 @@ Ballerina Java Arrays Library
 ===================
 
   [![Build](https://github.com/ballerina-platform/module-ballerina-jballerina.java.arrays/actions/workflows/build-timestamped-master.yml/badge.svg)](https://github.com/ballerina-platform/module-ballerina-jballerina.java.arrays/actions/workflows/build-timestamped-master.yml)
+  [![codecov](https://codecov.io/gh/ballerina-platform/module-ballerina-jballerina.java.arrays/branch/master/graph/badge.svg)](https://codecov.io/gh/ballerina-platform/module-ballerina-jballerina.java.arrays)
   [![Trivy](https://github.com/ballerina-platform/module-ballerina-jballerina.java.arrays/actions/workflows/trivy-scan.yml/badge.svg)](https://github.com/ballerina-platform/module-ballerina-jballerina.java.arrays/actions/workflows/trivy-scan.yml)
+  [![GraalVM Check](https://img.shields.io/github/workflow/status/ballerina-platform/module-ballerina-jballerina.java.arrays/Build%20with%20bal%20test%20native?label=GraalVM%20Check)](https://github.com/ballerina-platform/module-ballerina-jballerina.java.arrays/actions/workflows/build-with-bal-test-native.yml)
   [![GitHub Last Commit](https://img.shields.io/github/last-commit/ballerina-platform/module-ballerina-jballerina.java.arrays.svg)](https://github.com/ballerina-platform/module-ballerina-jballerina.java.arrays/commits/master)
   [![Github issues](https://img.shields.io/github/issues/ballerina-platform/ballerina-standard-library/module/jballerina.java.arrays.svg?label=Open%20Issues)](https://github.com/ballerina-platform/ballerina-standard-library/labels/module%2Fjballerina.java.arrays)
-  [![codecov](https://codecov.io/gh/ballerina-platform/module-ballerina-jballerina.java.arrays/branch/master/graph/badge.svg)](https://codecov.io/gh/ballerina-platform/module-ballerina-jballerina.java.arrays)
 
 This library provides APIs to create new Java array instances, get elements from arrays, set elements, etc.
 
