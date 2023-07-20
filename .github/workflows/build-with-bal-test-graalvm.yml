@@ -10,7 +10,7 @@ on:
       lang_version:
         description: Ballerina Lang Version (If given ballerina lang buid will be skipped)
         required: false
-        default: ''
+        default: ' '
       native_image_options:
         description: Default native-image options
         required: false
