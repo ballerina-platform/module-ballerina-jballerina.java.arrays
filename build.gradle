@@ -16,10 +16,10 @@
  */
 
 plugins {
-    id "com.github.spotbugs" version "${githubSpotbugsVersion}"
-    id "com.github.johnrengelman.shadow" version "${githubJohnrengelmanShadowVersion}"
-    id "de.undercouch.download" version "${underCouchDownloadVersion}"
-    id "net.researchgate.release" version "${researchgateReleaseVersion}"
+    id "com.github.spotbugs"
+    id "com.github.johnrengelman.shadow"
+    id "de.undercouch.download"
+    id "net.researchgate.release"
 }
 
 
@@ -62,10 +62,13 @@ subprojects {
     apply plugin: 'maven-publish'
 
     configurations {
-        ballerinaStdLibs
+        jbalTools
     }
     dependencies {
-        /* Standard libraries */
+        /* JBallerina Tools */
+        jbalTools ("org.ballerinalang:jballerina-tools:${ballerinaLangVersion}") {
+            transitive = false
+        }
     }
 }
 
