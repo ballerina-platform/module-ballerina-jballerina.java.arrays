@@ -13,6 +13,6 @@ distribution = "2201.12.0"
 graalvmCompatible = true
 
 [[platform.java21.dependency]]
-path = "../test-utils/build/libs/jballerina.java.arrays-test-utils-1.6.0-SNAPSHOT.jar"
-version = "1.6.0-SNAPSHOT"
+path = "../test-utils/build/libs/jballerina.java.arrays-test-utils-1.6.0.jar"
+version = "1.6.0"
 scope = "testOnly"
