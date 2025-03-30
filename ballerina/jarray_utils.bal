@@ -25,7 +25,7 @@ import ballerina/jballerina.java;
 #
 # + classType - The handle, which refers to the element type of the array
 # + dimensions - The dimensions of the array
-# + return - The handle, where refers to the new Java array instance
+# + return - The handle, which refers to the new Java array instance
 public isolated function newInstance(handle classType, int ...dimensions) returns handle = @java:Method {
     'class: "java.lang.reflect.Array",
     paramTypes: ["java.lang.Class", {"class": "int", dimensions:1}]
