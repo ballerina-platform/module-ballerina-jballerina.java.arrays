@@ -16,16 +16,16 @@
 
 import ballerina/jballerina.java;
 
-# Returns a new Java array instance with the specified element type and dimensions. This function completes abruptly
+# Returns a `handle`, which refers to the new Java array instance with the specified element type and dimensions. This function completes abruptly
 # with a `panic` if the specified handle refers to a Java null or if zero dimensions have been provided.
 # ```ballerina
 # handle stringClass = check java:getClass("java.lang.String");
 # handle StrArray = arrays:newInstance(stringClass, 4);
 # ```
 #
-# + classType - The element type of the array
+# + classType - The handle, which refers to the element type of the array
 # + dimensions - The dimensions of the array
-# + return - The new Java array instance
+# + return - The handle, which refers to the new Java array instance
 public isolated function newInstance(handle classType, int ...dimensions) returns handle = @java:Method {
     'class: "java.lang.reflect.Array",
     paramTypes: ["java.lang.Class", {"class": "int", dimensions:1}]
@@ -57,7 +57,7 @@ public isolated function get(handle array, int index) returns handle = @java:Met
 #
 # + array - The `handle`, which refers to the Java array
 # + index - The index of the element to be replaced
-# + element - The element to be stored at the specified index
+# + element - The `handle`, which refers to the java element to be stored at the specified index
 public isolated function set(handle array, int index, handle element) = @java:Method {
     'class: "java.lang.reflect.Array"
 } external;
@@ -207,14 +207,14 @@ public isolated function fromHandle(handle array, string jType, string bType = "
     return returnArray;
 }
 
-# Returns a handle value representation for a Ballerina array.
+# Returns a handle value, which refers to the java array representation for a Ballerina array.
 # ```ballerina
 # handle handleValue = check arrays:toHandle(array, "char");
 # ```
 #
 # + array - Ballerina array which is to be converted to a handle reference
 # + jType - Java class name or the primitive type of the array elements referenced by the handle
-# + return - The `handle|error` after the conversion
+# + return - The `handle` which refers to the Java array representation of the Ballerina array, or an error if the conversion fails
 public isolated function toHandle(any[] array, string jType) returns handle|error {
     handle returnHandle = newInstance(check java:getClass(jType), array.length());
     int count=0;
