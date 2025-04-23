@@ -214,7 +214,7 @@ public isolated function fromHandle(handle array, string jType, string bType = "
 #
 # + array - Ballerina array which is to be converted to a handle reference
 # + jType - Java class name or the primitive type of the array elements referenced by the handle
-# + return - The `handle`, which refers to the Java array representation for the Ballerina array or an error if the conversion fails
+# + return - The `handle` which refers to the Java array representation of the Ballerina array, or an error if the conversion fails
 public isolated function toHandle(any[] array, string jType) returns handle|error {
     handle returnHandle = newInstance(check java:getClass(jType), array.length());
     int count=0;
