@@ -220,70 +220,92 @@ public isolated function toHandle(any[] array, string jType) returns handle|erro
     int count=0;
     while (count < array.length()) {
         if (array is byte[] && jType == "char") {
-            set(returnHandle, count, wrapByteToChar(array[count]));
+            byte[] byteArray = <byte[]>array;
+            set(returnHandle, count, wrapByteToChar(byteArray[count]));
             count+=1;
         } else if (array is byte[] && jType == "short") {
-            set(returnHandle, count, wrapByteToShort(array[count]));
+            byte[] byteArray = <byte[]>array;
+            set(returnHandle, count, wrapByteToShort(byteArray[count]));
             count+=1;
         } else if (array is byte[] && jType == "long") {
-            set(returnHandle, count, wrapByteToLong(array[count]));
+            byte[] byteArray = <byte[]>array;
+            set(returnHandle, count, wrapByteToLong(byteArray[count]));
             count+=1;
         } else if (array is byte[] && jType == "int") {
-            set(returnHandle, count, wrapByteToInt(array[count]));
+            byte[] byteArray = <byte[]>array;
+            set(returnHandle, count, wrapByteToInt(byteArray[count]));
             count+=1;
         } else if (array is byte[] && jType == "float") {
-            set(returnHandle, count, wrapByteToFloat(array[count]));
+            byte[] byteArray = <byte[]>array;
+            set(returnHandle, count, wrapByteToFloat(byteArray[count]));
             count+=1;
         } else if (array is byte[] && jType == "double") {
-            set(returnHandle, count, wrapByteToDouble(array[count]));
+            byte[] byteArray = <byte[]>array;
+            set(returnHandle, count, wrapByteToDouble(byteArray[count]));
             count+=1;
         } else if (array is byte[] && jType == "byte") {
-            set(returnHandle, count, wrapByteToByte(array[count]));
+            byte[] byteArray = <byte[]>array;
+            set(returnHandle, count, wrapByteToByte(byteArray[count]));
             count+=1;
         } else if (array is int[] && jType == "byte") {
-            set(returnHandle, count, wrapIntToByte(array[count]));
+            int[] intArray = <int[]>array;
+            set(returnHandle, count, wrapIntToByte(intArray[count]));
             count+=1;
         } else if (array is int[] && jType == "char") {
-            set(returnHandle, count, wrapIntToChar(array[count]));
+            int[] intArray = <int[]>array;
+            set(returnHandle, count, wrapIntToChar(intArray[count]));
             count+=1;
         } else if (array is int[] && jType == "short") {
-            set(returnHandle, count, wrapIntToShort(array[count]));
+            int[] intArray = <int[]>array;
+            set(returnHandle, count, wrapIntToShort(intArray[count]));
             count+=1;
         } else if (array is int[] && jType == "long") {
-            set(returnHandle, count, wrapIntToLong(array[count]));
+            int[] intArray = <int[]>array;
+            set(returnHandle, count, wrapIntToLong(intArray[count]));
             count+=1;
         } else if (array is int[] && jType == "int") {
-            set(returnHandle, count, wrapIntToInt(array[count]));
+            int[] intArray = <int[]>array;
+            set(returnHandle, count, wrapIntToInt(intArray[count]));
             count+=1;
         } else if (array is float[] && jType == "char") {
-            set(returnHandle, count, wrapFloatToChar(array[count]));
+            float[] floatArray = <float[]>array;
+            set(returnHandle, count, wrapFloatToChar(floatArray[count]));
             count+=1;
         } else if (array is float[] && jType == "short") {
-            set(returnHandle, count, wrapFloatToShort(array[count]));
+            float[] floatArray = <float[]>array;
+            set(returnHandle, count, wrapFloatToShort(floatArray[count]));
             count+=1;
         } else if (array is float[] && jType == "long") {
-            set(returnHandle, count, wrapFloatToLong(array[count]));
+            float[] floatArray = <float[]>array;
+            set(returnHandle, count, wrapFloatToLong(floatArray[count]));
             count+=1;
         } else if (array is float[] && jType == "double") {
-            set(returnHandle, count, wrapFloatToDouble(array[count]));
+            float[] floatArray = <float[]>array;
+            set(returnHandle, count, wrapFloatToDouble(floatArray[count]));
             count+=1;
         } else if (array is float[] && jType == "byte") {
-            set(returnHandle, count, wrapFloatToByte(array[count]));
+            float[] floatArray = <float[]>array;
+            set(returnHandle, count, wrapFloatToByte(floatArray[count]));
             count+=1;
         } else if (array is float[] && jType == "int") {
-            set(returnHandle, count, wrapFloatToInt(array[count]));
+            float[] floatArray = <float[]>array;
+            set(returnHandle, count, wrapFloatToInt(floatArray[count]));
             count+=1;
         } else if (array is float[] && jType == "float") {
-            set(returnHandle, count, wrapFloatToFloat(array[count]));
+            float[] floatArray = <float[]>array;
+            set(returnHandle, count, wrapFloatToFloat(floatArray[count]));
             count+=1;
         } else if (array is boolean[]) {
-            set(returnHandle, count, wrapBooleanToBoolean(array[count]));
+            boolean[] booleanArray = <boolean[]>array;
+            set(returnHandle, count, wrapBooleanToBoolean(booleanArray[count]));
             count+=1;
         } else if (array is string[]) {
-            set(returnHandle, count, java:fromString(array[count]));
+            string[] stringArray = <string[]>array;
+            set(returnHandle, count, java:fromString(stringArray[count]));
             count+=1;
         } else if (array is java:JObject[]) {
-            java:JObject jObject = array[count];
+            java:JObject[] objectArray = <java:JObject[]>array;
+            java:JObject jObject = objectArray[count];
             set(returnHandle, count, jObject.jObj);
             count+=1;
         } else {
@@ -292,3 +314,4 @@ public isolated function toHandle(any[] array, string jType) returns handle|erro
     }
     return returnHandle;
 }
+
