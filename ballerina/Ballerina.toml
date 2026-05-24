@@ -1,18 +1,18 @@
 [package]
 org = "ballerina"
 name = "jballerina.java.arrays"
-version = "1.6.1"
+version = "1.6.2"
 authors = ["Ballerina"]
 keywords = ["java", "arrays"]
 repository = "https://github.com/ballerina-platform/module-ballerina-jballerina.java.arrays"
 icon = "icon.png"
 license = ["Apache-2.0"]
-distribution = "2201.12.0"
+distribution = "2201.14.0-SNAPSHOT"
 
-[platform.java21]
+[platform.java25]
 graalvmCompatible = true
 
-[[platform.java21.dependency]]
-path = "../test-utils/build/libs/jballerina.java.arrays-test-utils-1.6.1.jar"
-version = "1.6.1"
+[[platform.java25.dependency]]
+path = "../test-utils/build/libs/jballerina.java.arrays-test-utils-1.6.2-SNAPSHOT.jar"
+version = "1.6.2-SNAPSHOT"
 scope = "testOnly"
