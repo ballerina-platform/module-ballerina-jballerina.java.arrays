@@ -2,7 +2,7 @@
 
 This module provides APIs to create new Java array instances, get elements from arrays, set elements, and convert between Ballerina and Java arrays.
 
-## Key Features
+### Key Features
 
 - Create new Java array instances
 - Get and set elements by index
