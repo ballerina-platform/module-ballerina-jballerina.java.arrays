@@ -28,6 +28,9 @@ allprojects {
     version = project.version
 
     apply plugin: 'jacoco'
+    jacoco {
+        toolVersion = jacocoVersion
+    }
 
     repositories {
         mavenLocal()
@@ -87,6 +90,6 @@ release {
     }
 }
 
-task build {
+tasks.named('build') {
     dependsOn('jballerina.java.arrays-ballerina:build')
 }
