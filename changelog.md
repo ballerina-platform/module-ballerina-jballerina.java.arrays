@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Changed
+- [[#9301] Regroup standard library packages under new Area categories](https://github.com/ballerina-platform/ballerina-library/issues/9301)
 - [API docs updated](https://github.com/ballerina-platform/ballerina-standard-library/issues/3463)
 - [[#9132] Add `Type/Library` and `Area/Built-in` Keywords, Reformat README for Connector Store Discoverability](https://github.com/ballerina-platform/ballerina-library/issues/9132)
 - [[#9132] Corrected Name/Java Arrays keyword](https://github.com/ballerina-platform/ballerina-library/issues/9132)
